@@ -30,7 +30,7 @@ THE_FLUFFY_PET/
 🧩 Giải thích chi tiết
 🎨 Thiết kế 
 
-|-----------------------------------------------------------|
+|---------------|-------------------------------------------|
 |File/Folder	| Chức năng|
 |global.css	| Reset CSS + Biến màu + Utility classes|
 |components/	| Style header/footer/navbar|
