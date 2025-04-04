@@ -1,62 +1,63 @@
-# The_Fluffy_Pet
-Dự án cuối kì môn lập trình 
+# The Fluffy Pet 🐾 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-cấu trúc của các thư mục như sau:
+**Dự án cuối kì môn Lập trình Web** - Trang web quản lý thú cưng với giao diện thân thiện
 
+[![Demo Preview](https://via.placeholder.com/800x400.png?text=Project+Demo+Preview)](https://example.com)
+
+## 📂 Cấu trúc thư mục
+
+```bash
 THE_FLUFFY_PET/
 ├── index.html          # Trang chủ
 ├── about.html          # Trang Giới thiệu
 ├── contact.html        # Trang Liên hệ
-├── css/                # Thư mục CSS
-│   ├── global.css      # CSS chung (reset, biến, utility classes)
-│   ├── components/     # CSS cho các components (header, footer)
-│   ├── pages/          # CSS riêng cho từng trang
-│   │   ├── home.css
-│   │   ├── about.css
-│   │   └── contact.css
-│   └── main.css        # File tổng hợp (nếu dùng preprocessor)
-├── js/                 # Thư mục JavaScript
-│   ├── main.js         # JS chung (functions, event listeners)
-│   └── pages/          # JS riêng cho từng trang
-│       ├── home.js
-│       ├── about.js
-│       └── contact.js
-├── assets/             # Thư mục tài nguyên
+├── css/                # Stylesheets
+│   ├── global.css      # Biến CSS + Reset
+│   ├── components/     # CSS components
+│   ├── pages/          # Trang cụ thể
+│   └── main.css        # Tổng hợp CSS
+├── js/                 # JavaScript
+│   ├── main.js         # Logic chung
+│   └── pages/          # JS theo trang
+├── assets/             # Tài nguyên
 │   ├── images/         # Hình ảnh
 │   ├── fonts/          # Font chữ
-│   └── icons/          # Icons (SVG, etc.)
-└── components/         # Thư mục chứa HTML components
+│   └── icons/          # Icon hệ thống
+└── components/         # HTML components
     ├── header.html     # Header
     ├── footer.html     # Footer
-    └── navbar.html     # Navigation bar
+    └── navbar.html     # Thanh điều hướng
+🧩 Giải thích chi tiết
+🎨 Thiết kế CSS
+File/Folder	Chức năng
+global.css	Reset CSS + Biến màu + Utility classes
+components/	Style header/footer/navbar
+pages/	CSS riêng cho từng trang
+main.css	Import tất cả file CSS (nếu dùng preprocessor)
 
-    <----------- Giải thích chi tiết: ----------->
-HTML Files (Trang chính):
+⚙️ Cấu trúc JavaScript
+- `main.js`: 
+  - Xử lý sự kiện toàn cục
+  - Load dynamic components
+  - Common functions
 
-    Đặt trực tiếp ở thư mục gốc để dễ truy cập (ví dụ: index.html, about.html).
+- `pages/`:
+  - `home.js`: Logic trang chủ (carousel, animation)
+  - `contact.js`: Validate form + Xử lý 
+  
+📦 Components 
+<!-- Ví dụ: header.html -->
+<header class="main-header">
+  <!-- Navigation -->
+  <!-- Logo -->
+</header>
 
-    Mỗi trang con có HTML riêng, giúp quản lý nội dung cụ thể.
-
-Thư mục css/:
-
-    global.css: Chứa biến CSS, reset styles, và các lớp utility dùng chung.
-
-    components/: CSS cho các thành phần tái sử dụng (header, footer).
-
-    pages/: CSS riêng cho từng trang (tránh override code).
-
-Thư mục js/:
-
-    main.js: Xử lý logic chung (ví dụ: load components, event listeners toàn cục).
-
-    pages/: JS riêng cho từng trang (ví dụ: form validation ở trang contact).
-
-Thư mục assets/:
-
-    Tách biệt hình ảnh, fonts, icons để dễ quản lý.
-
-Thư mục components/:
-
-    Chứa các file HTML phần tử lặp lại (header, footer).
-
-    Cách sử dụng: Dùng JavaScript để load dynamic content.
+<!-- Sử dụng trong trang chính -->
+<script>
+  fetch('components/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
+</script>
