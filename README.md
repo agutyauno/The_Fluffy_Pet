@@ -33,18 +33,17 @@ THE_FLUFFY_PET/
 
 |File/Folder	| Chức năng|
 |---------------|-------------------------------------------|
-|global.css	| Reset CSS + Biến màu + Utility classes|
-|components/	| Style header/footer/navbar|
+|global.css	| Chứa biến CSS, reset styles, và các lớp utility dùng chung|
+|components/	| CSS cho các thành phần tái sử dụng vd: header/footer/navbar|
 |pages/	| CSS riêng cho từng trang|
-|main.css	| Import tất cả file CSS (nếu dùng preprocessor)|
 
 ⚙️ Cấu trúc JavaScript
-- `main.js`: 
+- `main.js`: xử lý logic chung
   - Xử lý sự kiện toàn cục
   - Load dynamic components
   - Common functions
 
-- `pages/`:
+- `pages/`: js riêng cho từng trang
   - `home.js`: Logic trang chủ (carousel, animation)
   - `contact.js`: Validate form + Xử lý 
   
