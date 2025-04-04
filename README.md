@@ -28,6 +28,7 @@ THE_FLUFFY_PET/
     ├── header.html     # Header
     ├── footer.html     # Footer
     └── navbar.html     # Thanh điều hướng
+```
 🧩 Giải thích chi tiết
 🎨 Thiết kế CSS
 File/Folder	Chức năng
