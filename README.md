@@ -28,7 +28,8 @@ THE_FLUFFY_PET/
     └── navbar.html     # Thanh điều hướng
 ```
 🧩 Giải thích chi tiết
-🎨 Thiết kế 
+
+🎨 Thiết kế css
 
 |File/Folder	| Chức năng|
 |---------------|-------------------------------------------|
