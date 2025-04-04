@@ -27,9 +27,9 @@ THE_FLUFFY_PET/
     ├── footer.html     # Footer
     └── navbar.html     # Thanh điều hướng
 ```
-🧩 Giải thích chi tiết
+## 🧩 Giải thích chi tiết
 
-🎨 Thiết kế css
+### 🎨 Thiết kế css
 
 |File/Folder	| Chức năng|
 |---------------|-------------------------------------------|
@@ -37,7 +37,7 @@ THE_FLUFFY_PET/
 |components/	| CSS cho các thành phần tái sử dụng vd: header/footer/navbar|
 |pages/	| CSS riêng cho từng trang|
 
-⚙️ Cấu trúc JavaScript
+### ⚙️ Cấu trúc JavaScript
 - `main.js`: xử lý logic chung
   - Xử lý sự kiện toàn cục
   - Load dynamic components
@@ -47,7 +47,7 @@ THE_FLUFFY_PET/
   - `home.js`: Logic trang chủ (carousel, animation)
   - `contact.js`: Validate form + Xử lý 
   
-📦 Components 
+### 📦 Components 
 ```html
 <!-- Ví dụ: header.html -->
 <header class="main-header">
