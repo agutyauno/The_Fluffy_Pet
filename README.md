@@ -3,8 +3,6 @@
 
 **Dự án cuối kì môn Lập trình Web** - Trang web quản lý thú cưng với giao diện thân thiện
 
-[![Demo Preview](https://via.placeholder.com/800x400.png?text=Project+Demo+Preview)](https://example.com)
-
 ## 📂 Cấu trúc thư mục
 
 ```bash
@@ -31,11 +29,11 @@ THE_FLUFFY_PET/
 ```
 🧩 Giải thích chi tiết
 🎨 Thiết kế CSS
-File/Folder	Chức năng
-global.css	Reset CSS + Biến màu + Utility classes
-components/	Style header/footer/navbar
-pages/	CSS riêng cho từng trang
-main.css	Import tất cả file CSS (nếu dùng preprocessor)
+|File/Folder	| Chức năng|
+|global.css	| Reset CSS + Biến màu + Utility classes|
+|components/	| Style header/footer/navbar|
+|pages/	| CSS riêng cho từng trang|
+|main.css	| Import tất cả file CSS (nếu dùng preprocessor)|
 
 ⚙️ Cấu trúc JavaScript
 - `main.js`: 
@@ -48,6 +46,7 @@ main.css	Import tất cả file CSS (nếu dùng preprocessor)
   - `contact.js`: Validate form + Xử lý 
   
 📦 Components 
+```html
 <!-- Ví dụ: header.html -->
 <header class="main-header">
   <!-- Navigation -->
@@ -62,3 +61,4 @@ main.css	Import tất cả file CSS (nếu dùng preprocessor)
       document.getElementById('header').innerHTML = data;
     });
 </script>
+```
