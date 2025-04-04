@@ -28,15 +28,14 @@ THE_FLUFFY_PET/
     └── navbar.html     # Thanh điều hướng
 ```
 🧩 Giải thích chi tiết
-🎨 Thiết kế CSS
+🎨 Thiết kế 
+
 |-----------------------------------------------------------|
 |File/Folder	| Chức năng|
 |global.css	| Reset CSS + Biến màu + Utility classes|
 |components/	| Style header/footer/navbar|
 |pages/	| CSS riêng cho từng trang|
 |main.css	| Import tất cả file CSS (nếu dùng preprocessor)|
-|-----------------------------------------------------------|
-
 
 ⚙️ Cấu trúc JavaScript
 - `main.js`: 
