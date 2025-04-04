@@ -38,6 +38,7 @@ THE_FLUFFY_PET/
 |pages/	| CSS riêng cho từng trang|
 
 ### ⚙️ Cấu trúc JavaScript
+
 - `main.js`: xử lý logic chung
   - Xử lý sự kiện toàn cục
   - Load dynamic components
@@ -46,8 +47,11 @@ THE_FLUFFY_PET/
 - `pages/`: js riêng cho từng trang
   - `home.js`: Logic trang chủ (carousel, animation)
   - `contact.js`: Validate form + Xử lý 
-  
+
 ### 📦 Components 
+Chứa các file HTML phần tử lặp lại (header, footer)
+
+ví dụ sử dụng:
 ```html
 <!-- Ví dụ: header.html -->
 <header class="main-header">
