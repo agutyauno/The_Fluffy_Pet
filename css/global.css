@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Inter;
+    src: url(../assets/fonts/woff2_font/Inter-VariableFont_opsz\,wght.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: Inter-Italic;
+    src: url(../assets/fonts/woff2_font/Inter-Italic-VariableFont_opsz\,wght.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: AegirSeaborn;
+    src: url(../assets/fonts/woff2_font/AegirSeaborn.woff2) format('woff2');
+}
+
+:root {
+    /* Colors */
+    --primary-color: #DAFDD3;
+    --secondary-color: #84EBFE;
+    --background-color: #ffffff;
+    --text-color:#000000;
+    --text-color-light: #ffffff;
+    --color-dark: #000000;
+    
+    /* Font sizes */
+    --font-small: 0.875rem;
+    --font-medium: 1rem;
+    --font-large: 1.25rem;
+    
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+
+    /* scale */
+    --scale-factor: calc(100vw / 1920);
+}
+
+/* Global styles */
+body {
+    max-width: 1920px;
+    width: 100vw;
+    font-family:'Inter','Inter-Italic', Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon{
+    width: calc(21px*var(--scale-factor));
+    height: calc(21px*var(--scale-factor));
+}
