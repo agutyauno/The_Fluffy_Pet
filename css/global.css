@@ -21,6 +21,10 @@
     --text-color:#000000;
     --text-color-light: #ffffff;
     --color-dark: #000000;
+    --color-be:#F3FDE4;
+    --color-light-pink:#EBD2FC;
+    --color-brown:#603737;
+    --color-dark-blue:#3E6999;
     
     /* Font sizes */
     --font-small: 0.875rem;
@@ -40,7 +44,7 @@
 body {
     max-width: 1920px;
     width: 100vw;
-    font-family:'Inter','Inter-Italic', Arial, sans-serif;
+    font-family: 'Inter','Inter-Italic', Arial, sans-serif;
     background-color: var(--background-color);
     margin: 0;
     padding: 0;
