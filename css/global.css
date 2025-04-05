@@ -32,8 +32,8 @@
     --spacing-medium: 1rem;
     --spacing-large: 2rem;
 
-    /* scale */
-    --scale-factor: calc(100vw / 1920);
+    /* Scale factor */
+    --scale-factor: 1;
 }
 
 /* Global styles */

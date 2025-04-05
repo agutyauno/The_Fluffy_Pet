@@ -36,6 +36,6 @@
 }
 
 .action>.icon {
-    width: 60px;
-    height: 60px;
+    width: calc(60px*var(--scale-factor));
+    height: calc(60px*var(--scale-factor));
 }
