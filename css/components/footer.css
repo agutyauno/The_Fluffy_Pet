@@ -1,6 +1,3 @@
-footer{
-    height: calc(388px * var(--scale-factor));
-}
 .input_footer{
     width: calc(718px * var(--scale-factor));
     height: calc(81px * var(--scale-factor));
@@ -11,10 +8,9 @@ footer{
     font-size: var(--font-medium);
 }
 .email_footer{
-    display: flex;
-    justify-content: center;
-    transform: translateY(-13%);
-    top: calc(55px * var(--scale-factor));
+    justify-self: center;
+    position: absolute;
+    top: -10%;
 }
 .email_footer[type="search"]{
     padding-left: 20px;
@@ -22,11 +18,14 @@ footer{
 .subscribe{
     width: calc(175px * var(--scale-factor));
     height: calc(70px * var(--scale-factor));
+    font-size: calc(20px * var(--scale-factor));
+    text-align: center;
+    color: var(--text-color-light);
     border-radius:40px 40px 40px 40px;
     background: var(--color-light-pink);
     position: absolute;
-    left: calc(1136px *var(--scale-factor));
-    top: calc(6px *var(--scale-factor));
+    right: 1%;
+    top: 6%;
 }
 .font{
     text-align: center;
@@ -37,7 +36,7 @@ footer{
     display: flex;
     justify-content: space-evenly;
     background-color: var(--primary-color);
-    height: calc(347px *var(--scale-factor));
+    height: calc(388px *var(--scale-factor));
     position: relative;
 }
 .footer_column_1{

@@ -1,11 +1,13 @@
 // Cập nhật tỷ lệ khi load và resize
+var viewportWidth;
+var scaleFactor;
 function updateScaleFactor() {
-  const viewportWidth = window.innerWidth;
+  viewportWidth = window.innerWidth;
   if (viewportWidth > 1920) {
     document.documentElement.style.setProperty('--scale-factor', 1);
     return;
   }
-  const scaleFactor = viewportWidth / 1920;
+  scaleFactor = viewportWidth / 1920;
   document.documentElement.style.setProperty('--scale-factor', scaleFactor);
 }
 
@@ -25,3 +27,17 @@ fetch('../components/footer.html')
   .then(data => {
     document.getElementById('footer').innerHTML = data;
   });
+
+window.addEventListener('scroll', function () {
+  const navbar = document.querySelector('.nav_bar');
+  const body = document.body;
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition > 115 * scaleFactor) { // Thay đổi giá trị này theo nhu cầu
+    navbar.classList.add('fixed');
+    body.classList.add('navbar-fixed');
+  } else {
+    navbar.classList.remove('fixed');
+    body.classList.remove('navbar-fixed');
+  }
+});

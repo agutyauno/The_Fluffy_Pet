@@ -46,7 +46,6 @@
 /* Global styles */
 body {
     max-width: 1920px;
-    width: 100vw;
     font-family: 'Inter','Inter-Italic', Arial, sans-serif;
     background-color: var(--background-color);
     margin: 0;
@@ -63,11 +62,6 @@ a{
     height: calc(40px*var(--scale-factor));
 }
 
-nav a.active {
-    color: red;
-    font-weight: bold;
-}
-
-main.navbar-fixed {
+body .navbar-fixed {
     padding-top: calc(115px * var(--scale-factor)); /* Bằng chiều cao navbar */
 }

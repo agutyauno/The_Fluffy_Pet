@@ -48,6 +48,7 @@
     align-items: center;
     color: var(--text-color);
     font-weight: var(--font-semi-bold);
+    font-size: calc(20px*var(--scale-factor));
 }
 
 /*========== nav bar ==========*/
@@ -61,7 +62,7 @@
     position: relative;
 }
 
-.nav_bar .fixed{
+.nav_bar.fixed{
     position: fixed;
     top: 0;
     left: 0;
