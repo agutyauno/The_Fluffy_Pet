@@ -1,3 +1,6 @@
+footer{
+    height: calc(388px * var(--scale-factor));
+}
 .input_footer{
     width: calc(718px * var(--scale-factor));
     height: calc(81px * var(--scale-factor));
@@ -8,7 +11,6 @@
     font-size: var(--font-medium);
 }
 .email_footer{
-    position: relative;
     display: flex;
     justify-content: center;
     transform: translateY(-13%);
@@ -36,6 +38,7 @@
     justify-content: space-evenly;
     background-color: var(--primary-color);
     height: calc(347px *var(--scale-factor));
+    position: relative;
 }
 .footer_column_1{
     margin-top: calc(76px *var(--scale-factor));;
@@ -97,14 +100,14 @@
 .footer_column_4{
     margin-top: calc(76px *var(--scale-factor));;
 }
-.facebook-icon{
+.media>.facebook-icon{
     margin-top: 5px;
     margin-right: 20px;
 }
-.x-icon{
+.media>.x-icon{
     margin-right: 20px;
 }
-.telephone-icon{
+.media>.telephone-icon{
     width: calc(60px*var(--scale-factor)) !important; 
     height: calc(60px*var(--scale-factor)) !important;
 }
@@ -118,14 +121,13 @@
 }
 /* footer_root */
 .footer_root{
-    display: flex;
-    justify-content: center;
-    transform: translateY(-480%);
+    justify-self: center;
+    position: absolute;
+    bottom: -10px;
+    z-index: 1;
 }
 /* logo chung nhan */
 .chungnhan{
     width:calc(214px *var(--scale-factor));
     height:calc(80px *var(--scale-factor));
-    margin-left: 218px;
-    transform: translateY(-180% );
 }
