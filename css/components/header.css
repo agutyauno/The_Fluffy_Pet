@@ -4,17 +4,24 @@
     background-color: var(--secondary-color);
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    padding: 0 calc(100px*var(--scale-factor));
 }
 
-.media {
+.info-container{
     display: flex;
+    width: calc(889px*var(--scale-factor));
+    font-size: calc(20px*var(--scale-factor));
+    font-weight: var(--font-semi-bold);
+    justify-content: space-between;
+}
+
+.info-container>div{
     align-items: center;
 }
 
-.media>div{
-    display: flex;
-    align-items: center;
+.info-container>div>img{
+    padding-right: calc(17px*(var(--scale-factor)));
 }
 
 .adress-icon{
@@ -26,6 +33,26 @@
     width: calc(21px*var(--scale-factor)) !important;
     height: calc(21px*var(--scale-factor)) !important;
 }
+
+.media {
+    display: flex;
+    align-items: center;
+    font-weight: 1;
+    color: var(--text-color-light);
+}
+
+.media>a{
+    padding: 0 calc(20px*var(--scale-factor));
+}
+
+
+.media>div{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-weight: var(--font-semi-bold);
+}
+
 /*========== nav bar ==========*/
 .nav_bar {
     height: calc(115px*var(--scale-factor));
@@ -33,6 +60,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 calc(100px*var(--scale-factor));
 }
 
 .logo {
@@ -45,6 +73,8 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    font-size: calc(30px*var(--scale-factor));
+    font-weight: var(--font-semi-bold);
 }
 
 .action {
@@ -52,9 +82,24 @@
     height: calc(60px*var(--scale-factor));
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.action>.icon {
+.action>button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.action>button:hover{
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+}
+
+.action>button>.icon {
     width: calc(60px*var(--scale-factor));
     height: calc(60px*var(--scale-factor));
+}
+
+.nav_link-container>a:hover{
+    border-bottom: 2px solid #EB4040;
 }
