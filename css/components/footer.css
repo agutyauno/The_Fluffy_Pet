@@ -1,5 +1,4 @@
 .input_footer{
-
     width: calc(718px * var(--scale-factor));
     height: calc(81px * var(--scale-factor));
     border-radius:40px 40px 40px 40px;
@@ -27,18 +26,18 @@
 }
 /*  footer_column_1  */
 .footer{
-    /* display: flex; */
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--color-be);
+    height: calc(347px *var(--scale-factor));
+    transform: translateY(-13%);
 }
 .footer_column_1{
+    margin-top: calc(76px *var(--scale-factor));;
     display: flex;
     flex-direction: column;
     width: calc(404px *var(--scale-factor));
     text-align: justify;
-}
-.font_column_1-1{
-    font-size: var(--font-large);
-    color:  var(--color-brown);
-    font-weight: bold;
 }
 .font_column_2-1{
     margin-top: 5px;
@@ -54,14 +53,57 @@
 }
 /*  footer_column_2  */
 .footer_column_2{
+    margin-top: calc(76px *var(--scale-factor));;
     display: flex;
     flex-direction: column;
-    width: calc(404px *var(--scale-factor));
+    width: calc(310px *var(--scale-factor));
     text-align: justify;
 }
-.font_column_1-2{
+.font_column_bold{
+    font-size: var(--font-large);
+    color:  var(--color-brown);
+    font-weight: bold;
+}
+.font_footer_center{
     display: flex;
+}
+.font_column_2-2{
+    font-size: var(--font-small);
+    color: var(--color-dark-blue);
+    font-weight: bold;
 }
 .font_footer{
+    font-size: var(--font-small);
+    color: var(--color-dark-blue);
+}
+/*  footer_column_3  */
+.footer_column_3{
+    margin-top: calc(76px *var(--scale-factor));;
+}
+
+/*  footer_column_4  */
+.footer_column_4{
+    margin-top: calc(76px *var(--scale-factor));;
+}
+.facebook-icon{
+    margin-right: 20px;
+    width:calc(40px *var(--scale-factor));
+    height:calc(40px *var(--scale-factor));
+}
+.x-icon{
+    margin-right: 20px;
+    width:calc(40px *var(--scale-factor));
+    height:calc(40px *var(--scale-factor));
+}
+.instagram-icon{
+    width:calc(40px *var(--scale-factor));
+    height:calc(40px *var(--scale-factor));
+}
+.font_column_4-1{
     display: flex;
 }
+.group_font{
+    display: flex;
+    flex-direction: column;
+}
+
