@@ -10,6 +10,11 @@
     position: relative;
     display: flex;
     justify-content: center;
+    transform: translateY(-13%);
+    top: calc(55px * var(--scale-factor));
+}
+.email_footer[type="search"]{
+    padding-left: 20px;
 }
 .subscribe{
     width: calc(175px * var(--scale-factor));
@@ -30,7 +35,7 @@
     justify-content: space-evenly;
     background-color: var(--color-be);
     height: calc(347px *var(--scale-factor));
-    transform: translateY(-13%);
+    /* transform: translateY(-13%); */
 }
 .footer_column_1{
     margin-top: calc(76px *var(--scale-factor));;
@@ -56,7 +61,7 @@
     margin-top: calc(76px *var(--scale-factor));;
     display: flex;
     flex-direction: column;
-    width: calc(310px *var(--scale-factor));
+    width: calc(350px *var(--scale-factor));
     text-align: justify;
 }
 .font_column_bold{
@@ -68,11 +73,13 @@
     display: flex;
 }
 .font_column_2-2{
+    margin-top: 5px;
     font-size: var(--font-small);
     color: var(--color-dark-blue);
     font-weight: bold;
 }
 .font_footer{
+    margin-top: 5px;
     font-size: var(--font-small);
     color: var(--color-dark-blue);
 }
@@ -80,12 +87,15 @@
 .footer_column_3{
     margin-top: calc(76px *var(--scale-factor));;
 }
-
+.font_column_3-2{
+    margin-top: 5px;
+}
 /*  footer_column_4  */
 .footer_column_4{
     margin-top: calc(76px *var(--scale-factor));;
 }
 .facebook-icon{
+    margin-top: 5px;
     margin-right: 20px;
     width:calc(40px *var(--scale-factor));
     height:calc(40px *var(--scale-factor));
@@ -101,9 +111,22 @@
 }
 .font_column_4-1{
     display: flex;
+    margin-top: 15px;
 }
 .group_font{
     display: flex;
     flex-direction: column;
 }
-
+/* footer_root */
+.footer_root{
+    display: flex;
+    justify-content: center;
+    transform: translateY(-480%);
+}
+/* logo chung nhan */
+.chungnhan{
+    width:calc(214px *var(--scale-factor));
+    height:calc(80px *var(--scale-factor));
+    margin-left: 218px;
+    transform: translateY(-180% );
+}
