@@ -1,13 +1,32 @@
+/*========== top header ==========*/
 .top_header {
     height: calc(69px*var(--scale-factor));
     background-color: var(--secondary-color);
     display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .media {
     display: flex;
+    align-items: center;
 }
 
+.media>div{
+    display: flex;
+    align-items: center;
+}
+
+.adress-icon{
+    width: calc(21px*var(--scale-factor)) !important;
+    height: calc(21px*var(--scale-factor)) !important;
+}
+
+.work_time-icon{
+    width: calc(21px*var(--scale-factor)) !important;
+    height: calc(21px*var(--scale-factor)) !important;
+}
+/*========== nav bar ==========*/
 .nav_bar {
     height: calc(115px*var(--scale-factor));
     background-color: var(--primary-color);

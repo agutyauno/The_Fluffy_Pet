@@ -5,7 +5,6 @@ function updateScaleFactor() {
     document.documentElement.style.setProperty('--scale-factor', scaleFactor);
   }
   
-  window.addEventListener('resize', updateScaleFactor);
-  updateScaleFactor(); // Khởi chạy lần đầu
-  window.addEventListener('load', updateScaleFactor);
-  updateScaleFactor();
+  window.addEventListener('load', updateScaleFactor); // Khởi chạy lần đầu
+  window.addEventListener('resize', updateScaleFactor); // Cập nhật khi thay đổi kích thước cửa sổ
+  
