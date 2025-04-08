@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập & Đăng ký</title>
+    <link rel="Web icon" href="./assets/icon/logo-icon.png" type="image/png">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/pages/login.css">
+    <script src="./js/pages/login.js"></script>
+</head>
+<body>
+    <div class="login-container"> 
+        <!-- Login Form -->
+        <form id="loginForm" class="form">
+            <h2 class="login_title title">ĐĂNG NHẬP TÀI KHOẢN</h2>
+            <p class="form-switch">Bạn chưa có tài khoản? <a href="#" onclick="showForm('registerForm')">Đăng ký tại đây</a></p>
+            
+            <div class="form-group">
+                <label for="loginEmail">Email <span class="required">*</span></label>
+                <input type="email" id="loginEmail" placeholder="Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="loginPassword">Mật khẩu <span class="required">*</span></label>
+                <input type="password" id="loginPassword" placeholder="Mật khẩu" required>
+            </div>
+
+            <p class="forgot-password">
+                <a href="#" onclick="showForm('resetForm')">Quên mật khẩu?</a>
+            </p>
+
+            <button type="submit" class="btn-submit">Đăng nhập</button>
+
+            <div class="social-login">
+                <p>Hoặc đăng nhập bằng</p>
+                <div class="social-buttons">
+                    <button type="button" class="btn-google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                        Đăng nhập Google
+                    </button>
+                    <button type="button" class="btn-facebook">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                        Đăng nhập Facebook
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="form hidden">
+            <h2 class="register_title">ĐĂNG KÝ TÀI KHOẢN</h2>
+            <p class="form-switch">Bạn đã có tài khoản? <a href="#" onclick="showForm('loginForm')">Đăng nhập tại đây</a></p>
+
+            <h3 class="register_input_title">THÔNG TIN CÁ NHÂN</h3>
+            
+            <div class="form-group">
+                <label for="lastName">Họ <span class="required">*</span></label>
+                <input type="text" id="lastName" placeholder="Họ" required>
+            </div>
+
+            <div class="form-group">
+                <label for="firstName">Tên <span class="required">*</span></label>
+                <input type="text" id="firstName" placeholder="Tên" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại <span class="required">*</span></label>
+                <input type="tel" id="phone" placeholder="Số điện thoại" required>
+            </div>
+
+            <div class="form-group">
+                <label for="registerEmail">Email <span class="required">*</span></label>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="registerPassword">Mật khẩu <span class="required">*</span></label>
+                <input type="password" id="registerPassword" placeholder="Mật khẩu" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Đăng ký</button>
+
+            <div class="social-login">
+                <p>Hoặc đăng nhập bằng</p>
+                <div class="social-buttons">
+                    <button type="button" class="btn-google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                        Đăng nhập Google
+                    </button>
+                    <button type="button" class="btn-facebook">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                        Đăng nhập Facebook
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Reset Password Form -->
+        <form id="resetForm" class="form hidden">
+            <h2 class="reset_title title">ĐẶT LẠI MẬT KHẨU</h2>
+            <p>Chúng tôi sẽ gửi cho bạn một email để kích hoạt việc đặt lại mật khẩu.</p>
+            
+            <div class="form-group">
+                <label for="resetEmail">Email <span class="required">*</span></label>
+                <input type="email" id="resetEmail" placeholder="Email" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Lấy lại mật khẩu</button>
+            
+            <p class="back-to-login">
+                <a href="#" onclick="showForm('loginForm')">Quay lại</a>
+            </p>
+
+            <div class="social-login">
+                <p>Hoặc đăng nhập bằng</p>
+                <div class="social-buttons">
+                    <button type="button" class="btn-google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                        Đăng nhập Google
+                    </button>
+                    <button type="button" class="btn-facebook">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                        Đăng nhập Facebook
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

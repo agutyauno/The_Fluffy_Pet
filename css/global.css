@@ -1,0 +1,67 @@
+@font-face {
+    font-family: Inter;
+    src: url(../assets/fonts/woff2_font/Inter-VariableFont_opsz\,wght.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: Inter-Italic;
+    src: url(../assets/fonts/woff2_font/Inter-Italic-VariableFont_opsz\,wght.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: AegirSeaborn;
+    src: url(../assets/fonts/woff2_font/AegirSeaborn.woff2) format('woff2');
+}
+
+:root {
+    /* Colors */
+    --primary-color: #DAFDD3;
+    --secondary-color: #84EBFE;
+    --background-color: #ffffff;
+    --text-color:#000000;
+    --text-color-light: #ffffff;
+    --color-dark: #000000;
+    --color-be:#F3FDE4;
+    --color-light-pink:#EBD2FC;
+    --color-brown:#603737;
+    --color-dark-blue:#3E6999;
+    
+    /* Font sizes */
+    --font-small: 0.875rem;
+    --font-medium: 1rem;
+    --font-large: 1.25rem;
+
+    /* font weight */
+    --font-semi-bold: 600;
+    
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+
+    /* Scale factor */
+    --scale-factor: 1;
+}
+
+/* Global styles */
+body {
+    max-width: 1920px;
+    font-family: 'Inter','Inter-Italic', Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon{
+    width: calc(40px*var(--scale-factor));
+    height: calc(40px*var(--scale-factor));
+}
+
+body .navbar-fixed {
+    padding-top: calc(115px * var(--scale-factor)); /* Bằng chiều cao navbar */
+}
