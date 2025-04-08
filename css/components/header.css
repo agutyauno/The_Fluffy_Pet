@@ -1,6 +1,6 @@
 /*========== top header ==========*/
 .top_header {
-    height: calc(69px*var(--scale-factor));
+    height: calc(49px*var(--scale-factor));
     background-color: var(--secondary-color);
     display: flex;
     align-items: center;
@@ -53,7 +53,7 @@
 
 /*========== nav bar ==========*/
 .nav_bar {
-    height: calc(115px*var(--scale-factor));
+    height: calc(94px*var(--scale-factor));
     background-color: var(--primary-color);
     display: flex;
     justify-content: space-between;
