@@ -1,0 +1,76 @@
+/* body{
+    width:  calc(1920px * var(--scale-factor));
+} */
+.centered-fixed {
+    position: fixed;
+    left: calc(247px * var(--scale-factor));
+    right: calc(237px * var(--scale-factor));
+    margin: auto;
+    height: calc(718px * var(--scale-factor));
+}
+.image-food{
+    display: flex;
+}
+.image-left{
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+.image-left-small{
+    width: calc(100px * var(--scale-factor));
+    height: calc(100px * var(--scale-factor));;
+    margin-bottom: 40px;
+}
+.image-right-big{
+    width: calc(660px * var(--scale-factor));
+    height: calc(660px * var(--scale-factor));
+}
+/* Thông tin sản phẩm */
+.priduct{
+    display: flex;
+    flex-direction: column;
+    margin-left: calc(100px * var(--scale-factor));
+}
+.name_product{
+    font-size: var(--font-big);
+    font-weight: bold;
+}
+/* .combine{
+    display: flex;
+} */
+.trademark{
+    display: flex;
+    font-weight: bold;
+}
+.name_trademark{
+    font-size: var(--font-medium);
+    color: red;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.invertory{
+    font-size: var(--font-medium);
+    font-weight: bold;
+}
+.money{
+    display: flex;
+}
+.sale{
+    padding: 5px;
+    background-color: #D0B6B6;
+}
+.sale_money{
+    letter-spacing: 1px;
+}
+.principal{
+    font-size: var(--font-large);
+    font-weight: bold;
+    color: red;
+}
+/* Group Other */
+.type{
+    width: 50%;
+    margin: 10px;
+    padding:5px;
+    background-color: #D9D9D9;
+}
