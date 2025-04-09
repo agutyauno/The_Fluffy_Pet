@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fluffy Pet</title>
+    <link rel="Web icon" href="./assets/icon/logo-icon.png" type="image/png">
+    <link rel="stylesheet" href="./css/pages/shop.css">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+
+<body>
+    <header id="header"></header>
+<!-- ========================================================================================================================== -->
+    <main style="height: 1000px;">
+        <!-- banner -->
+        <img src="" alt="shop banner" class="shop-banner">
+
+        <!-- shop -->
+        <div class="shop-container">
+            <!-- filter -->
+            <form class="filter-panel">
+                <h2>Điều kiện lọc</h2>
+                <!-- species -->
+                <div class="species">
+                    <label for="select_species">Giống mèo</label>
+                    <select name="" id="select_species">
+                        <option value="all">Tất cả</option>
+                        <option value="muop">Mèo Mướp</option>
+                        <option value="anh">Mèo Anh</option>
+                    </select>
+                </div>
+                <!-- select gender -->
+                <div class="select_gender">
+                    <input type="radio" name="select_gender" id="none" value="none" checked>
+                    <label for="none">Không chọn</label><br>
+
+                    <input type="radio" name="select_gender" id="boy" value="boy">
+                    <label for="boy">Đực</label><br>
+
+                    <input type="radio" name="select_gender" id="girl" value="girl">
+                    <label for="girl">Cái</label><br>
+                </div>
+                <!-- price range -->
+                <div class="price-range">
+                    <label for="select_price_range">Mức giá</label>
+                    <select name="" id="select_price_range">
+                        <option value="all">Tất cả</option>
+                        <option value="100k">100K -> 1tr</option>
+                        <option value="1000k">1tr -> 5tr</option>
+                    </select>
+                </div>
+                <!-- vaccine -->
+                <h2>Tiêm chủng</h2>
+                <div class="select_vaccine">
+                    <input type="radio" name="select_vaccine" id="none2" value="none2" checked>
+                    <label for="none2">Không chọn</label><br>
+
+                    <input type="radio" name="select_vaccine" id="yes" value="yes">
+                    <label for="yes">Có</label><br>
+
+                    <input type="radio" name="select_vaccine" id="no" value="no">
+                    <label for="no">Không</label><br>
+                </div>
+                <!-- button -->
+                <input type="submit" value="Tìm kiếm" id="submit_filter">
+                <input type="reset" value="Đặt lại" id="reset_filter">
+            </form>
+
+            <!-- product grid -->
+            <div class="product">
+                <!-- show product -->
+                <div class="product-grid">
+
+                </div>
+
+                <!-- pagination -->
+                <div class="pagination">
+
+                </div>
+            </div>
+    </main>
+<!-- ========================================================================================================================== -->
+    <footer id="footer"></footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/components/setup.js"></script>
+</body>
+
+</html>
