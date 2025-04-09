@@ -12,6 +12,9 @@
     position: absolute;
     top: -10%;
 }
+input.input_footer::placeholder{
+    font-size: calc(20px * var(--scale-factor));
+}
 .email_footer[type="search"]{
     padding-left: 20px;
 }

@@ -51,6 +51,10 @@
     font-size: calc(20px*var(--scale-factor));
 }
 
+.tel_number{
+    margin-left: 5px;
+}
+
 /*========== nav bar ==========*/
 .nav_bar {
     height: calc(94px*var(--scale-factor));
