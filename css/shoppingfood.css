@@ -26,7 +26,7 @@
     height: calc(660px * var(--scale-factor));
 }
 /* Thông tin sản phẩm */
-.priduct{
+.product{
     display: flex;
     flex-direction: column;
     margin-left: calc(100px * var(--scale-factor));
