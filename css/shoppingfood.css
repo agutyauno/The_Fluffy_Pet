@@ -1,6 +1,9 @@
 /* body{
     width:  calc(1920px * var(--scale-factor));
 } */
+ .centered-fixed{
+    display: flex;
+ }
 .centered-fixed {
     position: fixed;
     left: calc(247px * var(--scale-factor));
