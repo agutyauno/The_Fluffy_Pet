@@ -17,7 +17,7 @@ fetch('../components/footer.html')
     const body = document.body;
     const scrollPosition = window.scrollY;
   
-    if (scrollPosition > 115 * scaleFactor) { // Thay đổi giá trị này theo nhu cầu
+    if (scrollPosition > 49 * scaleFactor) { // Thay đổi giá trị này theo nhu cầu
       navbar.classList.add('fixed');
       body.classList.add('navbar-fixed');
     } else {
