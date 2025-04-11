@@ -62,6 +62,6 @@ a{
     height: calc(40px*var(--scale-factor));
 }
 
-body .navbar-fixed {
-    padding-top: calc(115px * var(--scale-factor)); /* Bằng chiều cao navbar */
+body.navbar-fixed {
+    padding-top: calc(94px * var(--scale-factor)); /* Bằng chiều cao navbar */
 }
