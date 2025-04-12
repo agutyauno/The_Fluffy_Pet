@@ -32,8 +32,7 @@ img.shop-banner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap: inherit;
 }
 
 .filter-section {
@@ -46,7 +45,13 @@ img.shop-banner {
     font-size: calc(25px*var(--scale-factor));
     font-weight: var(--font-semi-bold);
     align-self: flex-start;
-    margin-left: 10%;
+    margin: 0;
+    margin-left: var(--spacing-large);
+    margin-top: var(--spacing-medium);
+}
+
+h2+.filter-section {
+    margin-top: var(--spacing-medium);
 }
 
 label {
@@ -67,6 +72,7 @@ label {
     border-radius: 5px;
     background-color: white;
     box-sizing: border-box;
+    font-size: calc(20px*var(--scale-factor));
 }
 
 .dropdown-list {
@@ -121,24 +127,27 @@ label {
 
     /*========== Nút tìm kiếm và reset ==========*/
 .search-button {
+    width: calc(290px*var(--scale-factor));
     background-color: #3B5998;
     color: white;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
-    width: 100%;
+    border-radius: calc(50px*var(--scale-factor));
     cursor: pointer;
-    margin-top: 10px;
+    padding: calc(10px*var(--scale-factor));
+    margin-top: var(--spacing-large);
+    font-size: calc(20px*var(--scale-factor));
 }
 
 .reset-button {
+    width: 100%;
     background: none;
     border: none;
     color: black;
-    text-decoration: underline;
     cursor: pointer;
-    width: 100%;
+    font-size: calc(16px*var(--scale-factor));
+    text-decoration: underline;
     text-align: center;
+    margin-top: var(--spacing-medium);
 }
 
     /*========== product grid ==========*/
