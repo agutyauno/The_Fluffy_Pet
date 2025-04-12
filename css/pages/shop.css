@@ -1,0 +1,147 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 5%;
+}
+
+/*========== shop banner ==========*/
+img.shop-banner {
+    width: calc(1636px*var(--scale-factor));
+    height: calc(546px*var(--scale-factor));
+    margin-top: 5%;
+    border-radius: calc(60px*var(--scale-factor));
+    border: 1px solid;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+/*========== shop container ==========*/
+.shop-container {
+    display: flex;
+    margin-top: var(--spacing-medium);
+}
+
+    /*========== filter panel ==========*/
+.filter-container {
+    width: calc(370px*var(--scale-factor));
+    height: calc(560px*var(--scale-factor));
+    background-color: rgba(207, 156, 156, 0.2);
+    border-radius: calc(50px*var(--scale-factor));
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.filter-section {
+    margin-bottom: 15px;
+    width: calc(292px*var(--scale-factor));
+    height: calc(44px*var(--scale-factor));
+}
+
+.filter-container>h2 {
+    font-size: calc(25px*var(--scale-factor));
+    font-weight: var(--font-semi-bold);
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
+    /*========== Dropdown ==========*/
+.dropdown {
+    position: relative;
+}
+
+.dropdown-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+}
+
+.option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+    /*========== Nhóm radio button ==========*/
+.radio-group {
+    height: calc(44px*var(--scale-factor));
+    display: flex;
+    background-color: white;
+    border-radius: calc(12px*var(--scale-factor));
+    border: 1px solid var(--border-color);
+}
+
+.radio-group input {
+    display: none;
+}
+
+.radio-group label {
+    flex: 1;
+    font-size: calc(16px*var(--scale-factor));
+    font-weight: 300;
+    text-align: center;
+    line-height:calc(44px*var(--scale-factor)) ;
+    cursor: pointer;
+    margin: 0;
+}
+
+.radio-group input:checked+label {
+    background-color: #FCE4EC;
+}
+
+    /*========== Nút tìm kiếm và reset ==========*/
+.search-button {
+    background-color: #3B5998;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.reset-button {
+    background: none;
+    border: none;
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+    /*========== product grid ==========*/
+.product {
+    flex-grow: 2;
+}
