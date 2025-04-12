@@ -18,8 +18,10 @@ img.shop-banner {
 
 /*========== shop container ==========*/
 .shop-container {
+    width: calc(1000px*var(--scale-factor));
     display: flex;
     margin-top: var(--spacing-medium);
+    gap: var(--spacing-small);
 }
 
     /*========== filter panel ==========*/
@@ -150,7 +152,90 @@ label {
     margin-top: var(--spacing-medium);
 }
 
-    /*========== product grid ==========*/
+    /*========== product flex ==========*/
 .product {
     flex-grow: 2;
+}
+
+.product-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--spacing-small);
+}
+
+        /*========== product item ==========*/
+.product-item {
+    width: calc(260px*var(--scale-factor));
+    height: calc(420px*var(--scale-factor));
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+.product-img{
+    width: calc(260px*var(--scale-factor));
+    height: calc(260px*var(--scale-factor));
+}
+
+.product-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-light-pink);
+    color: var(--color-dark);
+    padding: calc(5px*var(--scale-factor));
+    font-size: calc(16px*var(--scale-factor));
+    font-weight: var(--font-semi-bold);
+    border-radius: calc(10px*var(--scale-factor));
+}
+
+.product-name{
+    margin-bottom: 0;
+    margin-top: calc(10px*var(--scale-factor));
+}
+
+.product-price{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: calc(5px*var(--scale-factor));
+    margin-top: var(--spacing-large);
+}
+
+.product-price>p{
+    margin: 0;
+}
+
+.product-price>p+p{
+    margin-left: 5px;
+}
+
+.product-current_price{
+    font-size: calc(25px*var(--scale-factor));
+    font-weight: var(--font-semi-bold);
+    color: var(--color-dark-blue);
+}
+
+.product-old_price{
+    font-size: calc(15px*var(--scale-factor));
+    text-align: justify;
+    text-decoration: line-through;
+}
+
+.discount{
+    font-size: calc(20px*var(--scale-factor));
+    font-weight: var(--font-semi-bold);
+    color: var(--color-red);
+}
+
+.product-item>input{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+    /*========== pagination  ==========*/
+.pagination {
+    justify-self: center;
+    transform: translateX(-29%);
 }
