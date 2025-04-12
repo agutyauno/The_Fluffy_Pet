@@ -37,7 +37,7 @@ body{
 .product{
     display: flex;
     flex-direction: column;
-    margin-left: calc(100px * var(--scale-factor));
+    margin-left: calc(50px * var(--scale-factor));
 }
 .name_product{
     font-size: 30px;
