@@ -1,6 +1,5 @@
 body{
     width: 100%; 
-
 }
 /* .centered-fixed {
     position: fixed;
@@ -14,6 +13,7 @@ body{
     margin-left: calc(247px * var(--scale-factor));
     margin-right: calc(237px * var(--scale-factor));
     display: flex;
+    margin-top:calc(50px * var(--scale-factor));
 }
 
 .image-food{
@@ -234,6 +234,7 @@ li {
     margin-top: 40px;
     text-align: center;
     /* white-space: nowrap; */
+    margin-bottom: calc(100px * var(--scale-factor));
 }
 .related-title {
     font-size: 24px;
