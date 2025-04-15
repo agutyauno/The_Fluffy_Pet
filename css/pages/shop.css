@@ -28,7 +28,7 @@ img.shop-banner {
     width: calc(370px*var(--scale-factor));
     height: calc(560px*var(--scale-factor));
     background-color: rgba(207, 156, 156, 0.2);
-    border-radius: calc(50px*var(--scale-factor));
+    border-radius: calc(15px*var(--scale-factor));
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@ label {
     height: calc(44px*var(--scale-factor));
     display: flex;
     background-color: white;
-    border-radius: calc(12px*var(--scale-factor));
+    border-radius: calc(5px*var(--scale-factor));
     border: 1px solid var(--border-color);
 }
 
@@ -249,6 +249,7 @@ label {
     left: 0;
     width: 100%;
     border-radius: calc(10px*var(--scale-factor));
+    padding: 7px;
 }
 
     /*========== pagination  ==========*/
