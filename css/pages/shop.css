@@ -73,7 +73,7 @@ label {
     border-radius: 5px;
     background-color: white;
     box-sizing: border-box;
-    font-size: calc(20px*var(--scale-factor));
+    font-size: var(--font-medium);
 }
 
 .dropdown-list {
@@ -114,7 +114,7 @@ label {
 
 .radio-group label {
     flex: 1;
-    font-size: calc(16px*var(--scale-factor));
+    font-size: var(--font-small);
     font-weight: 300;
     text-align: center;
     line-height:calc(44px*var(--scale-factor)) ;
@@ -136,7 +136,7 @@ label {
     cursor: pointer;
     padding: calc(10px*var(--scale-factor));
     margin-top: var(--spacing-large);
-    font-size: calc(20px*var(--scale-factor));
+    font-size: var(--font-medium);
 }
 
 .reset-button {
@@ -145,7 +145,7 @@ label {
     border: none;
     color: black;
     cursor: pointer;
-    font-size: calc(16px*var(--scale-factor));
+    font-size: var(--font-small);
     text-decoration: underline;
     text-align: center;
     margin-top: var(--spacing-medium);
@@ -189,7 +189,7 @@ label {
     background-color: var(--color-light-pink);
     color: var(--color-dark);
     padding: calc(5px*var(--scale-factor));
-    font-size: calc(16px*var(--scale-factor));
+    font-size: var(--font-small);
     font-weight: var(--font-semi-bold);
     border-radius: calc(10px*var(--scale-factor));
 }
@@ -201,7 +201,7 @@ label {
     margin-top: var(--spacing-small);
     padding: 2%;
     border-radius: calc(10px*var(--scale-factor));
-    font-size: calc(16px*var(--scale-factor));
+    font-size: var(--font-small);
 }
 
 .product-name{
@@ -213,7 +213,7 @@ label {
 .product-price{
     display: flex;
     align-items: flex-end;
-    margin-top: var(--spacing-medium);
+    margin-top: var(--spacing-small);
     margin-left: var(--spacing-medium);
 }
 
@@ -238,7 +238,7 @@ label {
 }
 
 .discount{
-    font-size: calc(20px*var(--scale-factor));
+    font-size: var(--font-medium);
     font-weight: var(--font-semi-bold);
     color: var(--color-red);
 }
@@ -248,13 +248,24 @@ label {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: calc(40px*var(--scale-factor));
     border-radius: calc(10px*var(--scale-factor));
-    padding: 7px;
+    font-size: var(--font-medium);
 }
 
     /*========== pagination  ==========*/
 .pagination {
     margin-top: var(--spacing-small);
     justify-self: center;
-    font-size: calc(20px*var(--scale-factor));
+    font-size: var(--font-medium);
+}
+
+.pagination .page.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
