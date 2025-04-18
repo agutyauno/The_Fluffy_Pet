@@ -6,15 +6,471 @@
     <link rel="Web icon" href="./assets/icon/logo-icon.png" type="image/png">
     <link rel="stylesheet" href="./css/pages/home.css">
     <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><!-- Font Awesome -->
 </head>
 <body>
     <header id="header"></header>
-    <main style="height: 1000px; background-color: beige;">
+    <main>
+        <!--slide show-->
+        <div class="slide-show">
+            <div class="list-images">
+                <img src="./assets/image/vit.jpeg" alt="c3" class="clone">
+                <img src="./assets/image/chim.jpeg" alt="c1">
+                <img src="./assets/image/vet.jpeg" alt="c2">
+                <img src="./assets/image/vit.jpeg" alt="c3">
+                <img src="./assets/image/chim.jpeg" alt="c1" class="clone">
+            </div>
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class="dots">
+                <button class="dot active" data-index="0"></button>
+                <button class="dot" data-index="1"></button>
+                <button class="dot" data-index="2"></button>
+            </div>
+        </div>
+        <!---->
 
+        <!-- Services Section -->
+        <div class="services container">
+            <div class="service-item">
+                <i class="fas fa-truck-fast"></i>
+                <div class="service-info">
+                    <h3>Ship COD Toàn Quốc</h3>
+                    <p>Thanh toán khi nhận hàng</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-rotate-left"></i>
+                <div class="service-info">
+                    <h3>Miễn Phí Đổi Hàng</h3>
+                    <p>Trong vòng 7 ngày</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-calendar-day"></i>
+                <div class="service-info">
+                    <h3>Giao Hàng Trong Ngày</h3>
+                    <p>Đối với đơn nội thành Đồng Nai</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-headset"></i>
+                <div class="service-info">
+                    <h3>Đặt Hàng Trực Tuyến</h3>
+                    <p>Hotline: 0363.850.XYZ</p> 
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Feed Section -->
+        <section class="instagram-feed">
+            <div class="container">
+                <div class="insta-header">
+                    <img src="./assets/icon/instagram-icon.png" alt="Instagram Logo" class="insta-logo">
+                    <h2>Instagram</h2>
+                </div>
+                <p class="insta-description">
+                    Tài khoản Instagram chính thức của Mèo Mina liên tục cập nhật những bức ảnh đáng yêu về những chú chó và mèo tại cửa hàng!
+                </p>
+                <a href="#" class="insta-button" target="_blank">
+                    Đến tài khoản chính thức <i class="fas fa-external-link-alt"></i>
+                </a>
+                <!-- Decorative elements (optional, add SVGs or images here) -->
+                <div class="insta-decorations">
+                    <!-- <img src="./assets/image/balloons.svg" alt="Balloons" class="decor-balloons"> -->
+                    <!-- <img src="./assets/image/cats.svg" alt="Cats" class="decor-cats"> -->
+                </div>
+            </div>
+            <div class="insta-grid">
+                <div class="insta-post-placeholder"></div>
+                <div class="insta-post-placeholder"></div>
+                <div class="insta-post-placeholder"></div>
+                <div class="insta-post-placeholder"></div>
+                <div class="insta-post-placeholder"></div>
+                <div class="insta-post-placeholder"></div> 
+            </div>
+        </section>
+
+        <!--Search-->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-header">
+                    <img src="./assets/image/Search.png" alt="Search Icon" class="search-icon">
+                    <h2>Tìm kiếm</h2>
+                </div>
+                
+                <div class="breed-sections">
+                    <!-- Dog Breeds Section -->
+                    <div class="breed-section">
+                        <h3 class="breed-title dog">Giống Chó</h3>
+                        <div class="breed-grid">
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/chihuahua.jpg" alt="Chó Chihuahua">
+                                <p>Chó Chihuahua</p>
+                            </div>
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/poodle.jpg" alt="Chó Poodle">
+                                <p>Chó Poodle</p>
+                            </div>
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/dachshund.jpg" alt="Chó Dachshund">
+                                <p>Chó Dachshund</p>
+                            </div>
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/shiba.jpg" alt="Chó Shiba">
+                                <p>Chó Shiba</p>
+                            </div>
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/pomeranian.jpg" alt="Chó Pomeranian">
+                                <p>Chó Pomeranian</p>
+                            </div>
+                            <a href="./dogs.html" class="breed-card view-more">
+                                <i class="fas fa-chevron-right"></i>
+                                <span class="sr-only">Xem thêm giống chó</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cat Breeds Section -->
+                    <div class="breed-section">
+                        <h3 class="breed-title cat">Giống Mèo</h3>
+                        <div class="breed-grid">
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/my-long-ngan.jpg" alt="Mèo Mỹ lông ngắn">
+                                <p>Mèo Mỹ lông ngắn</p>
+                            </div>
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/ba-tu.jpg" alt="Mèo ba tư">
+                                <p>Mèo ba tư</p>
+                            </div>
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/anh-long-ngan.jpg" alt="Mèo Anh lông ngắn">
+                                <p>Mèo Anh lông ngắn</p>
+                            </div>
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/na-uy.jpg" alt="Mèo Na Uy">
+                                <p>Mèo Na Uy</p>
+                            </div>
+                            <div class="breed-card">
+                                <img src="./assets/image/breeds/tai-cup.jpg" alt="Mèo tai cụp">
+                                <p>Mèo tai cụp</p>
+                            </div>
+                            <a href="./cats.html" class="breed-card view-more">
+                                <i class="fas fa-chevron-right"></i>
+                                <span class="sr-only">Xem thêm giống mèo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!--Promotional Products-->
+       <section class="promo-section">
+           <div class="container">
+               <h2 class="promo-title">Sản Phẩm đang được khuyến mãi</h2>
+               
+               <div class="promo-grid">
+                   <!-- Normal Items -->
+                   <div class="promo-item">
+                       <div class="item-image">
+                           <img src="./assets/image/products/product1.jpg" alt="Pate mèo siêu cấp">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Pate mèo siêu cấp</h3>
+                           <p class="item-price">150.000đ</p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item">
+                       <div class="item-image">
+                           <img src="./assets/image/products/product2.jpg" alt="Thức ăn cho chó">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Thức ăn cho chó</h3>
+                           <p class="item-price">200.000đ</p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item">
+                       <div class="item-image">
+                           <img src="./assets/image/products/product3.jpg" alt="Đồ chơi mèo">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Đồ chơi mèo</h3>
+                           <p class="item-price">80.000đ</p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item">
+                       <div class="item-image">
+                           <img src="./assets/image/products/product4.jpg" alt="Cát vệ sinh">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Cát vệ sinh</h3>
+                           <p class="item-price">120.000đ</p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item">
+                       <div class="item-image">
+                           <img src="./assets/image/products/product5.jpg" alt="Bát ăn tự động">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Bát ăn tự động</h3>
+                           <p class="item-price">250.000đ</p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <!-- Sold Out Items -->
+                   <div class="promo-item sold-out" data-status="sold-out">
+                       <div class="item-image">
+                           <span class="status-tag">Tạm hết hàng</span>
+                           <img src="./assets/image/products/product6.jpg" alt="Vòng cổ chó">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Vòng cổ chó</h3>
+                           <p class="item-price">90.000đ</p>
+                           <button class="btn-disabled" disabled>TẠM HẾT HÀNG</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item sold-out" data-status="sold-out">
+                       <div class="item-image">
+                           <span class="status-tag">Tạm hết hàng</span>
+                           <img src="./assets/image/products/product7.jpg" alt="Nhà cào móng mèo">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Nhà cào móng mèo</h3>
+                           <p class="item-price">180.000đ</p>
+                           <button class="btn-disabled" disabled>TẠM HẾT HÀNG</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item sold-out" data-status="sold-out">
+                       <div class="item-image">
+                           <span class="status-tag">Tạm hết hàng</span>
+                           <img src="./assets/image/products/product8.jpg" alt="Lược chải lông">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Lược chải lông</h3>
+                           <p class="item-price">70.000đ</p>
+                           <button class="btn-disabled" disabled>TẠM HẾT HÀNG</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item sold-out" data-status="sold-out">
+                       <div class="item-image">
+                           <span class="status-tag">Tạm hết hàng</span>
+                           <img src="./assets/image/products/product9.jpg" alt="Túi vận chuyển">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Túi vận chuyển</h3>
+                           <p class="item-price">300.000đ</p>
+                           <button class="btn-disabled" disabled>TẠM HẾT HÀNG</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item sold-out" data-status="sold-out">
+                       <div class="item-image">
+                           <span class="status-tag">Tạm hết hàng</span>
+                           <img src="./assets/image/products/product10.jpg" alt="Dây dắt chó">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Dây dắt chó</h3>
+                           <p class="item-price">85.000đ</p>
+                           <button class="btn-disabled" disabled>TẠM HẾT HÀNG</button>
+                       </div>
+                   </div>
+
+                   <!-- Discounted Items -->
+                   <div class="promo-item" data-discount="15">
+                       <div class="item-image">
+                           <span class="status-tag sale">-15%</span>
+                           <img src="./assets/image/products/product11.jpg" alt="Thức ăn hạt mèo">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Thức ăn hạt mèo</h3>
+                           <p class="item-price">
+                               <span class="original-price">200.000đ</span>
+                               <span class="discounted-price">170.000đ</span>
+                           </p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item" data-discount="20">
+                       <div class="item-image">
+                           <span class="status-tag sale">-20%</span>
+                           <img src="./assets/image/products/product12.jpg" alt="Xương gặm sạch răng">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Xương gặm sạch răng</h3>
+                           <p class="item-price">
+                               <span class="original-price">100.000đ</span>
+                               <span class="discounted-price">80.000đ</span>
+                           </p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item" data-discount="30">
+                       <div class="item-image">
+                           <span class="status-tag sale">-30%</span>
+                           <img src="./assets/image/products/product13.jpg" alt="Chuông đeo cổ">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Chuông đeo cổ</h3>
+                           <p class="item-price">
+                               <span class="original-price">50.000đ</span>
+                               <span class="discounted-price">35.000đ</span>
+                           </p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item" data-discount="25">
+                       <div class="item-image">
+                           <span class="status-tag sale">-25%</span>
+                           <img src="./assets/image/products/product14.jpg" alt="Khay vệ sinh mèo">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Khay vệ sinh mèo</h3>
+                           <p class="item-price">
+                               <span class="original-price">160.000đ</span>
+                               <span class="discounted-price">120.000đ</span>
+                           </p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+
+                   <div class="promo-item" data-discount="40">
+                       <div class="item-image">
+                           <span class="status-tag sale">-40%</span>
+                           <img src="./assets/image/products/product15.jpg" alt="Balo phi hành gia">
+                       </div>
+                       <div class="item-content">
+                           <h3 class="item-name">Balo phi hành gia</h3>
+                           <p class="item-price">
+                               <span class="original-price">500.000đ</span>
+                               <span class="discounted-price">300.000đ</span>
+                           </p>
+                           <button class="btn-primary">CHỌN</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="view-more-promo">
+                   <a href="#" class="view-more-button">
+                       Xem thêm sản phẩm <span class="highlight">SẢN PHẨM ĐANG KHUYẾN MÃI</span>
+                       <i class="fas fa-chevron-right"></i>
+                   </a>
+               </div>
+           </div>
+       </section>
+
+       <!-- Banner Section -->
+       <section class="banner-section">
+           <div class="container">
+               <div class="banner-wrapper">
+                   <img src="./assets/image/banner/banner-promo.jpg" alt="Banner khuyến mãi" class="banner-img">
+               </div>
+           </div>
+       </section>
+
+       <!-- Tips Section -->
+       <section class="tips-section">
+           <div class="container">
+               <h2 class="tips-title">Những Tips bạn phải cần</h2>
+               <div class="tips-list">
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip1.jpg" alt="Bảng tên cho chó mèo">
+                       <div class="tip-content">
+                           <h3>Top 05 bảng tên cho chó mèo được ưa chuộng nhất hiện nay</h3>
+                           <span class="date">19/03/2025</span>
+                       </div>
+                   </article>
+
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip2.jpg" alt="Sữa tắm trị ve rận">
+                       <div class="tip-content">
+                           <h3>Sữa tắm trị ve rận cho chó mèo có thực sự hiệu quả?</h3>
+                           <span class="date">17/03/2025</span>
+                       </div>
+                   </article>
+
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip3.jpg" alt="Sữa tắm cho chó mèo">
+                       <div class="tip-content">
+                           <h3>Sữa tắm cho chó mèo: Lưu ý khi sử dụng để bảo vệ da lông</h3>
+                           <span class="date">15/03/2025</span>
+                       </div>
+                   </article>
+
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip4.jpg" alt="Sữa tắm khô cho chó">
+                       <div class="tip-content">
+                           <h3>Sữa tắm khô cho chó: Giải pháp vệ sinh tiện lợi cho thú cưng</h3>
+                           <span class="date">08/03/2025</span>
+                       </div>
+                   </article>
+
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip5.jpg" alt="Pettag">
+                       <div class="tip-content">
+                           <h3>Pettag: Địa chỉ cung cấp bảng tên chó mèo uy tín tại TPHCM</h3>
+                           <span class="date">07/03/2025</span>
+                       </div>
+                   </article>
+
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip6.jpg" alt="Hạt thức ăn cho chó">
+                       <div class="tip-content">
+                           <h3>Hạt thức ăn cho chó: Hướng dẫn cách lựa chọn mới nhất</h3>
+                           <span class="date">05/03/2025</span>
+                       </div>
+                   </article>
+
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip7.jpg" alt="Nệm cho chó mèo">
+                       <div class="tip-content">
+                           <h3>Nệm cho chó mèo: Giải pháp hoàn hảo cho thú cưng của bạn</h3>
+                           <span class="date">03/03/2025</span>
+                       </div>
+                   </article>
+
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip8.jpg" alt="Thuốc xổ giun">
+                       <div class="tip-content">
+                           <h3>Những lưu ý khi sử dụng thuốc xổ giun cho mèo tại nhà 2025</h3>
+                           <span class="date">01/03/2025</span>
+                       </div>
+                   </article>
+
+                   <article class="tip-item">
+                       <img src="./assets/image/tips/tip9.jpg" alt="Pate cho mèo">
+                       <div class="tip-content">
+                           <h3>Pate cho mèo con: Lựa chọn dinh dưỡng tốt nhất 2025</h3>
+                           <span class="date">22/02/2025</span>
+                       </div>
+                   </article>
+               </div>
+               <div class="view-more-tips">
+                   <a href="#" class="view-more-link">Xem các tin bài khác »</a>
+               </div>
+           </div>
+       </section>
+
+      
     </main>
     <footer id="footer"></footer>
     
     <script src="./js/main.js"></script>
     <script src="./js/components/setup.js"></script>
+    <script src="./js/pages/home.js"></script>
 </body>
 </html>
