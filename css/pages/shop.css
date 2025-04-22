@@ -171,14 +171,15 @@ label {
     height: calc(420px*var(--scale-factor));
     background-color: var(--primary-color);
     border-radius: calc(10px*var(--scale-factor));
+    border: 1px solid #ccc;
     position: relative;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .product-img{
     width: calc(257px*var(--scale-factor));
     height: calc(257px*var(--scale-factor));
-    border: 1px solid;
+    border: 1px solid #ccc;
     border-radius: calc(10px*var(--scale-factor));
 }
 
@@ -249,7 +250,7 @@ label {
     left: 0;
     width: 100%;
     height: calc(40px*var(--scale-factor));
-    border-radius: calc(10px*var(--scale-factor));
+    border: 1px solid;
     font-size: var(--font-medium);
 }
 
@@ -258,14 +259,4 @@ label {
     margin-top: var(--spacing-small);
     justify-self: center;
     font-size: var(--font-medium);
-}
-
-.pagination .page.active {
-    background-color: #007bff;
-    color: white;
-}
-
-.pagination button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
 }
