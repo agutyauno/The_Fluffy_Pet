@@ -8,7 +8,6 @@
 .main-left{
     width: calc(990px * var(--scale-factor));
     display: flex;
-    background-color: wheat;
     flex-direction: column;
 }
 .author_information , author_information_text{
@@ -22,23 +21,110 @@
 }
 /* Các nội dung chính */
 .main_content{
+    margin-top: calc(20px * var(--scale-factor));
+    margin-bottom: calc(20px * var(--scale-factor));
     display: flex;
     flex-direction: column;
-    margin-left:calc(50px * var(--scale-factor));
+    border: 1px solid;
+    border-radius: calc(10px * var(--scale-factor));
+    background-color: #FAFAFA;
 }
 .main_content_bold{
+    margin-top: 20px;
     font-weight: bold;
     font-size: var(--font-large);
+    margin-left:calc(50px * var(--scale-factor));
 }
 .font_style{
     font-size: var(--font-small);
 }
 .content_font{
     margin-top:calc(5px * var(--scale-factor));
+    margin-left:calc(80px * var(--scale-factor));
 }
+/* Nội dung của tiêu đề */
+.content_text{
+    font-size: var(--font-medium);
+    text-align: justify;
+    margin-bottom: 10px;
+}
+.group_content{
+    display: flex;
+    flex-direction: column;
+}
+/* Group image and text */
+.group_image_text{
+    margin-top: calc(20px * var(--scale-factor));
+    margin-bottom: calc(20px * var(--scale-factor));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image_content{
+    max-width: calc(700px * var(--scale-factor));
+}
+.text_blod{
+    
+    font-size: var(--font-large);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* bên Phải */
 .main-right{
     margin-left:calc(50px * var(--scale-factor));
     display: flex;
-    background-color: aqua;
+    /* background-color: aqua; */
     width: calc(445px * var(--scale-factor));;
+    
 }
+.content_right{
+    font-weight: bold;
+    font-size: var(--font-large);
+    border-bottom: 1.25px solid #7a7979;
+    width: calc(445px * var(--scale-factor));
+    padding-bottom: 10px;
+}
+/* Group news small */
+.image_small{
+    width: calc(120px * var(--scale-factor));
+    height: calc(70px * var(--scale-factor));
+    border-radius: 5px;
+}
+.Gorup_news_small{
+    margin-top: 15px;
+    display: flex;
+    font-size: var(--font-large);
+    border-bottom: 1.25px solid #7a7979;
+    padding-bottom: 20px;
+}
+.group_font{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content_font_right{
+    font-size: var(--font-medium);
+    font-weight: 500;
+}
+.content_text_right{
+    font-size: var(--font-small);
+}
+
+
+
+
+/* 
+
+<div class="content_text"></div>
+
+
+
+<div class="text_blod"></div>
+
+
+<li class="content_text"></li>
+
+
+
+<img src="" alt="#" class="image_content"></div> */
