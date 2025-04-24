@@ -29,8 +29,8 @@
     /* Font sizes */
     --font-small: 0.875rem;
     --font-medium: 1rem;
-    --font-large: 1.25rem;
-    --font-big: 1.5rem;
+    --font-large: var(30px * --scale-factor);
+    --font-big: var(30px * --scale-factor);
 
     /* font weight */
     --font-semi-bold: 600;
