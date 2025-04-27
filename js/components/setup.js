@@ -24,7 +24,7 @@ fetch('./components/footer.html')
       navbar.classList.remove('fixed');
       body.classList.remove('navbar-fixed');
     }
-};
+});
 
 // Khởi tạo NavbarManager khi DOM đã load
 document.addEventListener('DOMContentLoaded', () => {
