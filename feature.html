@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng của bạn</title>
+    <link rel="stylesheet" href="/css/pages/feature.css">
+</head>
+<body>
+    <header id="header"></header>
+    <div class="container">
+        <div class="header">
+            <input type="text" placeholder="Tìm kiếm / Giỏ hàng" class="search-bar">
+            <h1 class="cart-title">Giỏ hàng của bạn</h1>
+            <p class="cart-subtext">Bạn đang có <span class="bold">2 sản phẩm</span> trong giỏ hàng</p>
+        </div>
+        <div class="main">
+            <div class="left-column">
+                <div class="product-list">
+                    <div class="product">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/100" alt="Sữa bột cho chó con sơ sinh với chó mẹ">
+                        </div>
+                        <div class="product-details">
+                            <h2>Sữa bột cho chó con sơ sinh với chó mẹ</h2>
+                            <div class="price-row">
+                                <p class="original-price">220.000đ</p>
+
+                            </div>
+                            <div class="quantity-selector">
+                                <button>-</button>
+                                <input type="number" value="1" min="1">
+                                <button>+</button>
+                            </div>
+                            <p class="subtotal">220.000đ</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/100" alt="Pate cho mèo Pate sữa dê KitCat Lon 70gr">
+                            <div class="sale-badge">SALE 50%</div>
+                        </div>
+                        <div class="product-details">
+                            <h2>Pate cho mèo Pate sữa dê KitCat Lon</h2>
+                            <p class="weight">70gr</p>
+                            <div class="price-row">
+                                <p class="original-price">15.000đ</p>
+                            </div>
+                            <div class="quantity-selector">
+                                <button>-</button>
+                                <input type="number" value="1" min="1">
+                                <button>+</button>
+                            </div>
+                            <p class="subtotal">15.000đ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notes">
+                    <label for="order-notes">Ghi chú đơn hàng</label>
+                    <textarea id="order-notes" placeholder="Nhập ghi chú của bạn tại đây"></textarea>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="order-summary">
+                    <h2>Thông tin đơn hàng</h2>
+                    <p class="total">Tổng tiền: <span>235.000đ</span></p>
+                    <p class="summary-note">• Miễn phí vận chuyển cho đơn hàng từ 399.000đ</p>
+                    <p class="summary-note">• Giá trên đã gồm thuế trong vòng 2 giờ, áp dụng tại khu vực TP.Bình Hòa</p>
+                    <button class="payment-button">THANH TOÁN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+    <script src="./js/components/setup.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
