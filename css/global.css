@@ -32,7 +32,8 @@
     /* Font sizes */
     --font-small: calc(15px*var(--scale-factor));
     --font-medium: calc(20px*var(--scale-factor));
-    --font-large: calc(25px*var(--scale-factor));
+    --font-large: var(25px * --scale-factor);
+    --font-big: var(30px * --scale-factor);
 
     /* font weight */
     --font-semi-bold: 600;
