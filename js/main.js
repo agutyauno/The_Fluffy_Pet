@@ -14,4 +14,3 @@ function updateScaleFactor() {
 
 window.addEventListener('load', updateScaleFactor); // Khởi chạy lần đầu
 window.addEventListener('resize', updateScaleFactor); // Cập nhật khi thay đổi kích thước cửa sổ
-
