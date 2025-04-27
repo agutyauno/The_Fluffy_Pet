@@ -12,26 +12,17 @@ fetch('./components/footer.html')
     document.getElementById('footer').innerHTML = data;
   });
 
-const NavbarManager = {
-    init() {
-        this.setupNavbarScroll();
-    },
-
-    setupNavbarScroll() {
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.nav_bar');
-            const body = document.body;
-            const scrollPosition = window.scrollY;
-            const scaleFactor = ScaleManager.getScaleFactor();
-            
-            if (scrollPosition > 115 * scaleFactor) {
-                navbar.classList.add('fixed');
-                body.classList.add('navbar-fixed');
-            } else {
-                navbar.classList.remove('fixed');
-                body.classList.remove('navbar-fixed');
-            }
-        });
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.nav_bar');
+    const body = document.body;
+    const scrollPosition = window.scrollY;
+  
+    if (scrollPosition > 49 * scaleFactor) { // Thay đổi giá trị này theo nhu cầu
+      navbar.classList.add('fixed');
+      body.classList.add('navbar-fixed');
+    } else {
+      navbar.classList.remove('fixed');
+      body.classList.remove('navbar-fixed');
     }
 };
 

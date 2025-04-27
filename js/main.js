@@ -1,29 +1,16 @@
-const ScaleManager = {
-    viewportWidth: 0,
-    scaleFactor: 1,
+'use strict';
+// Cập nhật tỷ lệ khi load và resize
+var viewportWidth;
+var scaleFactor;
+function updateScaleFactor() {
+  viewportWidth = window.innerWidth;
+  if (viewportWidth > 1920) {
+    document.documentElement.style.setProperty('--scale-factor', 1);
+    return;
+  }
+  scaleFactor = viewportWidth / 1920;
+  document.documentElement.style.setProperty('--scale-factor', scaleFactor);
+}
 
-    init() {
-        this.updateScaleFactor();
-        window.addEventListener('resize', () => this.updateScaleFactor());
-    },
-
-    updateScaleFactor() {
-        this.viewportWidth = window.innerWidth;
-        if (this.viewportWidth > 1920) {
-            this.scaleFactor = 1;
-        } else {
-            this.scaleFactor = this.viewportWidth / 1920;
-        }
-        document.documentElement.style.setProperty('--scale-factor', this.scaleFactor);
-    },
-
-    getScaleFactor() {
-        return this.scaleFactor;
-    }
-};
-
-// Khởi tạo ScaleManager khi DOM đã load
-document.addEventListener('DOMContentLoaded', () => {
-    ScaleManager.init();
-});
-
+window.addEventListener('load', updateScaleFactor); // Khởi chạy lần đầu
+window.addEventListener('resize', updateScaleFactor); // Cập nhật khi thay đổi kích thước cửa sổ

@@ -11,7 +11,7 @@
 .info-container{
     display: flex;
     width: calc(889px*var(--scale-factor));
-    font-size: calc(20px*var(--scale-factor));
+    font-size: var(--font-medium);
     font-weight: var(--font-semi-bold);
     justify-content: space-between;
 }
@@ -48,7 +48,11 @@
     align-items: center;
     color: var(--text-color);
     font-weight: var(--font-semi-bold);
-    font-size: calc(20px*var(--scale-factor));
+    font-size: var(--font-medium);
+}
+
+.tel_number{
+    margin-left: 5px;
 }
 
 /*========== nav bar ==========*/

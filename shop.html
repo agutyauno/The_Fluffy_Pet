@@ -1,0 +1,118 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fluffy Pet</title>
+    <link rel="Web icon" href="./assets/icon/logo-icon.png" type="image/png">
+    <link rel="stylesheet" href="./css/pages/shop.css">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+
+<body>
+    <header id="header"></header>
+    <!-- ========================================================================================================================== -->
+    <main>
+        <!-- banner -->
+        <img src="./assets/image/img-placeholder.png" alt="shop banner" class="shop-banner">
+
+        <!-- shop -->
+        <div class="shop-container">
+            <!-- filter -->
+            <div class="filter-container">
+                <!-- Tiêu đề -->
+                <h2 style="margin-top: var(--spacing-large);">Điều kiện lọc</h2>
+                <!-- Lọc loại mèo -->
+                <div class="filter-section">
+                    <div class="dropdown">
+                        <input type="text" class="dropdown-input" id="cat-breed" placeholder="Chọn giống mèo">
+                        <div class="dropdown-list">
+                            <!-- Danh sách loại mèo - thêm theo dữ liệu của bạn -->
+                            <div class="option">Mèo Ba Tư</div>
+                            <div class="option">Mèo Anh Lông Ngắn</div>
+                            <div class="option">Mèo Xiêm</div>
+                            <!-- Thêm các giống mèo khác -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chọn giới tính -->
+                <div class="filter-section">
+                    <div class="radio-group">
+                        <input type="radio" id="gender-none" name="gender" value="none" checked>
+                        <label for="gender-none">Chưa chọn</label>
+                        <input type="radio" id="gender-male" name="gender" value="male">
+                        <label for="gender-male">Đực</label>
+                        <input type="radio" id="gender-female" name="gender" value="female">
+                        <label for="gender-female">Cái</label>
+                    </div>
+                </div>
+
+                <!-- Chọn mức giá -->
+                <div class="filter-section">
+                    <div class="dropdown">
+                        <input type="text" class="dropdown-input" id="price-range" placeholder="Chọn mức giá">
+                        <div class="dropdown-list">
+                            <!-- Danh sách mức giá -->
+                            <div class="option">từ 100k -> 500k</div>
+                            <div class="option">từ 500k -> 1tr</div>
+                            <div class="option">từ 1tr -> 5tr</div>
+                            <!-- Thêm các mức giá khác -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tiêu đề tiêm chủng -->
+                <h2>Tiêm chủng</h2>
+
+                <!-- Chọn số lần tiêm chủng -->
+                <div class="filter-section">
+                    <div class="radio-group">
+                        <input type="radio" id="vaccination-none" name="vaccination" value="none" checked>
+                        <label for="vaccination-none">Chưa chọn</label>
+                        <input type="radio" id="vaccination-1" name="vaccination" value="1">
+                        <label for="vaccination-1">1 lần</label>
+                        <input type="radio" id="vaccination-2" name="vaccination" value="2">
+                        <label for="vaccination-2">>1 lần</label>
+                    </div>
+                </div>
+
+                <!-- Nút tìm kiếm và reset -->
+                <button class="search-button">Tìm kiếm</button>
+                <button class="reset-button">xóa điều kiện lọc</button>
+            </div>
+
+            <!-- product grid -->
+            <div class="product">
+                <!-- show product -->
+                <div class="product-grid">
+                    <div class="product-item">
+                        <img src="./assets/image/img-placeholder.png" alt="product img" class="product-img">
+                        <div class="product-tag">tag</div>
+                        <div class="pet_gender">gender</div>
+                        <p class="product-name">abcde</p>
+                        <div class="product-price">
+                            <p class="product-current_price">0<span class="product-price-unit">đ</span></p>
+                            <p class="product-old_price">0<span class="product-price-unit">đ</span></p>
+                            <p class="discount">100<span class="product-discount_unit">%</span></p>
+                        </div>
+                        <input type="button" value="chọn">
+                    </div>
+                    
+                </div>
+
+                <!-- pagination -->
+                <div class="pagination" aria-label="Pagination">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ========================================================================================================================== -->
+    <footer id="footer"></footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/components/setup.js"></script>
+    <script src="./js/pages/shop.js"></script>
+</body>
+
+</html>
