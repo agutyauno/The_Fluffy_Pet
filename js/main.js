@@ -1,3 +1,4 @@
+'use strict';
 // Cập nhật tỷ lệ khi load và resize
 var viewportWidth;
 var scaleFactor;
