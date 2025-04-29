@@ -251,6 +251,7 @@ label {
     width: 100%;
     height: calc(40px*var(--scale-factor));
     border: 1px solid;
+    border-radius: calc(10px*var(--scale-factor));
     font-size: var(--font-medium);
 }
 
