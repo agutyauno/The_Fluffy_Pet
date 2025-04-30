@@ -153,7 +153,6 @@ label {
 
     /*========== product grid ==========*/
 .product {
-    /* flex-grow: 2; */
     width: fit-content;
 }
 

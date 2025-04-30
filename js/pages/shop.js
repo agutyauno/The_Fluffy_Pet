@@ -198,53 +198,17 @@ const paginationHandler = {
     }
 };
 
-const productHandler = {
-    async fetchAndDisplayProducts(type, limit = 0) {
-        try {
-            const response = await fetch(`https://localhost:5201/api/${type}?limit=${limit}`);
-            const data = await response.json();
-            this.renderProducts(data, type);
-        } catch (error) {
-            console.error('Error fetching products:', error);
-            this.showError();
-        }
-    },
+import { ProductHandler } from "../components/productHandler.js";  // Thêm .js
 
-    renderProducts(data, type) {
-        const productGrid = document.querySelector('.product-grid');
-        productGrid.innerHTML = '';
-
-        data.forEach(item => {
-            const discountedPrice = item.price * (1 - item.discount / 100);
-            const productItem = document.createElement('div');
-            productItem.className = 'product-item';
-            
-            productItem.innerHTML = `
-                <img src="${item.imageUrl || './assets/image/img-placeholder.png'}" alt="${item.name}" class="product-img">
-                <div class="product-tag">${item.breed || item.category || ''}</div>
-                ${type !== 'products' ? `
-                    <div class="pet_gender">${item.gender ? 'Đực' : 'Cái'}</div>
-                ` : ''}
-                <p class="product-name">${item.name}</p>
-                <div class="product-price">
-                    <p class="product-current_price">${discountedPrice.toLocaleString()}<span class="product-price-unit">đ</span></p>
-                    ${item.discount > 0 ? `
-                        <p class="product-old_price">${item.price.toLocaleString()}<span class="product-price-unit">đ</span></p>
-                        <p class="discount">${item.discount}<span class="product-discount_unit">%</span></p>
-                    ` : ''}
-                </div>
-                <input type="button" value="chọn" onclick="select${type.slice(0,-1)}(${item.id})">
-            `;
-            
-            productGrid.appendChild(productItem);
-        });
-    },
-};
+const shopProducts = new ProductHandler({  // Đổi tên class cho đúng
+    apiBaseUrl: 'https://localhost:5201/api',
+    selectButtonText: 'Thêm vào giỏ'
+});
 
 // Initialize all handlers
 document.addEventListener('DOMContentLoaded', () => {
     dropdownHandler.init();
     filterHandler.init();
-    // Có thể gọi với các tham số khác nhau
-    productHandler.fetchAndDisplayProducts('cats', 20);
+    paginationHandler.init();
+    shopProducts.fetchAndDisplayProducts('products', 20);
 });

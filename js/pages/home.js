@@ -1,3 +1,5 @@
+import { ProductHandler } from '../components/productHandler.js';
+
 const SliderManager = {
     listImage: null,
     imgs: null,
@@ -144,14 +146,76 @@ const PetSearchManager = {
     }
 };
 
-// Initialize managers when DOM is loaded
+const PromoManager = {
+    productHandler: null,
+
+    init() {
+        this.productHandler = new ProductHandler({
+            apiBaseUrl: 'https://localhost:5201/api',
+            gridSelector: '.promo-grid',
+            selectButtonText: 'CHỌN',
+            onSelect: this.handleProductSelection.bind(this),
+            customRender: this.renderPromoItem.bind(this)
+        });
+
+        this.loadPromoProducts();
+    },
+
+    async loadPromoProducts() {
+        try {
+            await this.productHandler.fetchAndDisplayProducts('products', 1);
+        } catch (error) {
+            console.error('Error loading products:', error);
+        }
+    },
+
+    handleProductSelection(item) {
+        console.log('Selected product:', item);
+        // TODO: Implement add to cart functionality
+    },
+
+    renderPromoItem(item) {
+        const discountedPrice = item.price * (1 - item.discount / 100);
+        const isAvailable = item.stockQuantity > 0;
+        
+        const promoItem = document.createElement('div');
+        promoItem.className = `promo-item ${!isAvailable ? 'sold-out' : ''}`;
+        
+        promoItem.innerHTML = `
+            <img src="${item.imageUrl}" alt="${item.name}" class="product-img" 
+                 onerror="this.src='./assets/image/img-placeholder.png'">
+            <div class="product-tag">${item.category || ''}</div>
+            <p class="product-name">${item.name}</p>
+            <div class="product-price">
+                <p class="product-current_price">${discountedPrice.toLocaleString()}<span class="product-price-unit">đ</span></p>
+                ${item.discount > 0 ? `
+                    <p class="product-old_price">${item.price.toLocaleString()}<span class="product-price-unit">đ</span></p>
+                    <p class="discount">-${item.discount}<span class="product-discount_unit">%</span></p>
+                ` : ''}
+            </div>
+            <input type="button" value="${isAvailable ? 'CHỌN' : 'TẠM HẾT HÀNG'}" 
+                   class="${isAvailable ? 'select-button' : 'btn-disabled'}"
+                   ${!isAvailable ? 'disabled' : ''}>
+        `;
+
+        if (isAvailable) {
+            const selectButton = promoItem.querySelector('.select-button');
+            selectButton.addEventListener('click', () => this.handleProductSelection(item));
+        }
+
+        return promoItem;
+    }
+};
+
+// Initialize all managers when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     SliderManager.init();
     PetSearchManager.init();
+    PromoManager.init();
 });
 
 // Pet Search Functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const categoryTabs = document.querySelectorAll('.category-tab');
     const dogBreeds = document.getElementById('dogBreeds');
     const catBreeds = document.getElementById('catBreeds');
@@ -176,3 +240,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
