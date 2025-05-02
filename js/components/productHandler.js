@@ -13,11 +13,27 @@ export class ProductHandler {
 
     async fetchAndDisplayProducts(type, limit = 0) {
         try {
-            const response = await fetch(`${this.config.apiBaseUrl}/${type}?limit=${limit}`);
+            let endpoint;
+            switch(type) {
+                case 'cats':
+                    endpoint = 'pets/cats';
+                    break;
+                case 'dogs':
+                    endpoint = 'pets/dogs';
+                    break;
+                default:
+                    endpoint = 'products';
+            }
+
+            const response = await fetch(`${this.config.apiBaseUrl}/${endpoint}?limit=${limit}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             const data = await response.json();
             this.renderProducts(data, type);
         } catch (error) {
             console.error('Error fetching products:', error);
+            this.showError();
         }
     }
 

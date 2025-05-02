@@ -200,15 +200,63 @@ const paginationHandler = {
 
 import { ProductHandler } from "../components/productHandler.js";  // Thêm .js
 
-const shopProducts = new ProductHandler({  // Đổi tên class cho đúng
+const shopProducts = new ProductHandler({
     apiBaseUrl: 'https://localhost:5201/api',
-    selectButtonText: 'Thêm vào giỏ'
+    selectButtonText: 'Thêm vào giỏ',
+    onSelect: (item) => {
+        // Xử lý thêm vào giỏ hàng
+        console.log('Added to cart:', item);
+    }
 });
+
+// Hàm lấy loại sản phẩm từ URL
+function getProductTypeFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('type') || 'all'; // Mặc định hiển thị tất cả nếu không có type
+}
+
+function updatePageBanner(type) {
+    const banner = document.querySelector('.shop-banner');
+    if (banner) {
+        switch (type) {
+            case 'cats':
+                banner.src = './assets/image/banner/cat-banner.jpg';
+                break;
+            case 'dogs':
+                banner.src = './assets/image/banner/dog-banner.jpg';
+                break;
+            default:
+                banner.src = './assets/image/banner/default-banner.jpg';
+        }
+    }
+}
+
+// Hàm cập nhật tiêu đề trang
+function updatePageTitle(type) {
+    const titleMap = {
+        'cats': 'Bé Mèo',
+        'dogs': 'Bé Chó',
+        'products': 'Sản Phẩm',
+    };
+    
+    const shopTitle = document.querySelector('.shop-title');
+    if (shopTitle) {
+        shopTitle.textContent = titleMap[type] || 'Tất Cả Sản Phẩm';
+    }
+}
 
 // Initialize all handlers
 document.addEventListener('DOMContentLoaded', () => {
+    const productType = getProductTypeFromUrl();
+    
     dropdownHandler.init();
     filterHandler.init();
     paginationHandler.init();
-    shopProducts.fetchAndDisplayProducts('products', 20);
+    
+    // Cập nhật tiêu đề
+    updatePageTitle(productType);
+    updatePageBanner(productType);
+    
+    // Fetch sản phẩm theo loại
+    shopProducts.fetchAndDisplayProducts(productType, 20);
 });

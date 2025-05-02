@@ -23,6 +23,13 @@ img.shop-banner {
     justify-content: space-between;
 }
 
+.shop-title {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: var(--font-medium);
+    color: var(--color-dark);
+}
+
     /*========== filter panel ==========*/
 .filter-container {
     width: calc(370px*var(--scale-factor));
