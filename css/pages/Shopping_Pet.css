@@ -1,0 +1,7 @@
+.centered-fixed{
+    max-width: calc(1920px * var(--scale-factor));
+    margin-left: calc(247px * var(--scale-factor));
+    margin-right: calc(237px * var(--scale-factor));
+    display: flex;
+    margin-top:calc(50px * var(--scale-factor));
+}
