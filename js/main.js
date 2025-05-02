@@ -1,3 +1,4 @@
+'use strict';
 // Cập nhật tỷ lệ khi load và resize
 var viewportWidth;
 var scaleFactor;
@@ -13,4 +14,3 @@ function updateScaleFactor() {
 
 window.addEventListener('load', updateScaleFactor); // Khởi chạy lần đầu
 window.addEventListener('resize', updateScaleFactor); // Cập nhật khi thay đổi kích thước cửa sổ
-
