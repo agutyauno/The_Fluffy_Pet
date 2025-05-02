@@ -20,25 +20,35 @@
     --background-color: #ffffff;
     --text-color:#000000;
     --text-color-light: #ffffff;
+    --border-color:#ccc;
     --color-dark: #000000;
     --color-be:#F3FDE4;
     --color-light-pink:#EBD2FC;
     --color-brown:#603737;
     --color-dark-blue:#3E6999;
+    --color-red:#FF0000;
+
     
     /* Font sizes */
+<<<<<<< HEAD
     --font-small: 0.875rem;
     --font-medium: 1rem;
     --font-large: var(30px * --scale-factor);
     --font-big: var(40px * --scale-factor);
+=======
+    --font-small: calc(15px*var(--scale-factor));
+    --font-medium: calc(20px*var(--scale-factor));
+    --font-large: var(25px * --scale-factor);
+    --font-big: var(30px * --scale-factor);
+>>>>>>> e50495c82bb142f14f6a1d1d3c609d9762bb24d8
 
     /* font weight */
     --font-semi-bold: 600;
     
     /* Spacing */
-    --spacing-small: 0.5rem;
-    --spacing-medium: 1rem;
-    --spacing-large: 2rem;
+    --spacing-small: 2%;
+    --spacing-medium: 5%;
+    --spacing-large: 10%;
 
     /* Scale factor */
     --scale-factor: 1;
@@ -47,7 +57,7 @@
 /* Global styles */
 body {
     max-width: 1920px;
-    font-family: 'Inter','Inter-Italic', Arial, sans-serif;
+    font-family:'Inter','Inter-Italic', Arial, sans-serif;
     background-color: var(--background-color);
     margin: 0;
     padding: 0;
@@ -63,6 +73,6 @@ a{
     height: calc(40px*var(--scale-factor));
 }
 
-body .navbar-fixed {
-    padding-top: calc(115px * var(--scale-factor)); /* Bằng chiều cao navbar */
+body.navbar-fixed {
+    padding-top: calc(94px * var(--scale-factor)); /* Bằng chiều cao navbar */
 }
