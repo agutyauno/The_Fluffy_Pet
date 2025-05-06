@@ -1,0 +1,152 @@
+/* .centered-fixed {
+    max-width: calc(1920px * var(--scale-factor));
+    margin-left: calc(247px * var(--scale-factor));
+    margin-right: calc(237px * var(--scale-factor));
+    display: flex;
+    margin-top:calc(50px * var(--scale-factor));
+} */
+.instagram-feed {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow for decorations */
+}
+
+.instagram-feed .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* For positioning decorations */
+    z-index: 2;
+}
+
+.insta-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.insta-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.instagram-feed h2 {
+    font-size: 2.5em;
+    color: #5c6ac4; /* Instagram-like purple */
+    font-weight: 600;
+    margin: 0;
+}
+
+.insta-description {
+    font-size: 1.1em;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.insta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.insta-button:hover {
+    background-color: #eee;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.insta-button i {
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+
+/* Optional Decorative Elements Styling */
+.insta-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; /* Prevent interaction */
+}
+
+.decor-balloons {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 100px; /* Adjust size */
+    opacity: 0.7;
+}
+
+.decor-cats {
+    position: absolute;
+    right: 12%;
+    bottom: 15%;
+    width: 120px; /* Adjust size */
+    opacity: 0.8;
+}
+
+.insta-grid {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Small gap between placeholders */
+    margin-top: 50px;
+    padding: 0 10px;
+    width: 100%;
+    overflow-x: hidden; /* Hide horizontal overflow if needed */
+}
+
+.insta-post-placeholder {
+    flex: 0 0 auto; /* Prevent shrinking/growing */
+    width: calc(16.66% - 10px); /* Adjust width for 6 items and gap */
+    max-width: 200px; /* Max width for each post */
+    aspect-ratio: 1 / 1; /* Square posts */
+    background-color: #e9ecef; /* Light gray placeholder */
+    border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.slider {
+    margin-top: calc(60px * var(--scale-factor));
+    display: inline-flex;
+    animation: slide 20s linear infinite;
+}
+
+.slider img {
+    max-width: 280px; /* Adjust based on your image size */
+    max-height: 200px;
+    margin-right: 10px;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Moves half the total width for seamless looping */
+    }
+}
