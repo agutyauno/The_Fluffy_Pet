@@ -91,24 +91,24 @@
 }
 
 .action {
-    width: calc(296px*var(--scale-factor));
+    /* width: calc(296px*var(--scale-factor)); */
     height: calc(60px*var(--scale-factor));
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.action>button{
+.action>a{
     border: none;
     background-color: rgba(255, 255, 255, 0);
 }
 
-.action>button:hover{
+.action>a:hover{
     background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
 }
 
-.action>button>.icon {
+.action>a>.icon {
     width: calc(60px*var(--scale-factor));
     height: calc(60px*var(--scale-factor));
 }
