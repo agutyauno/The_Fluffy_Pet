@@ -6,11 +6,203 @@
     <title>Shopping_Pet</title>
     <link rel="stylesheet" href="./css/pages/Shopping_Pet.css">
     <link rel="stylesheet" href="/css/global.css">
+    <script src="./Shopping_Pet.js"></script>
 </head>
 <body>
+    <header id="header"></header>
     <main class="centered-fixed">
-        chos huy mai
+        <div class="group_head">
+            <div class="image_pet_left">
+                <div class="imgage_pet">
+                    <div class="image_pet_big"><img src="./assets/image/Shopping_Pet/image.png" alt="#" class="pet"></div>
+                    <div class="image_pet_small">
+                        <img src="./assets/image/Shopping_Pet/image (1).png" alt="#" class="image_small">
+                        <img src="./assets/image/Shopping_Pet/image (2).png" alt="#" class="image_small">
+                        <img src="./assets/image/vit.jpeg" alt="#" class="image_small">
+                        <img src="./assets/image/vet.jpeg" alt="#" class="image_small">
+                    </div>
+                </div>
+            </div>
+            <!-- thông tin bên phải -->
+            <div class="information_right">
+                <div class="name_pet">Mèo Anh lông dài chân lùn tai cụp màu golden</div>
+                <div class="Buy">50.000.000đ</div>
+                <div class="group">
+                    <div class="info_section">
+                        <div class="label_bold">Giới tính:</div>
+                        <div class="value"> Cái</div>
+                    </div>
+                    <div class="info_section">
+                        <div class="label_bold">Ngày sinh:</div>
+                        <div class="value">12/11/2024</div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="info_section">
+                        <div class="label_bold">Màu lông:</div>
+                        <div class="value">Màu golden</div>
+                    </div>
+                    <div class="info_section">
+                        <div class="label_bold">Cân nặng hiện tại:</div>
+                        <div class="value">0,8kg</div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="info_section">
+                        <div class="label_bold">Sức khỏe:</div>
+                        <div class="value">Khỏe mạnh, tràn đầy năng lượng</div>
+                    </div>
+                </div>
+                <!-- phần tiêm chủng -->
+                <h>Tiêm chủng</h>
+                <div class="group">
+                    <div class="container">
+                        <div class="section">
+                            <div class="group_group">
+                                <div class="dose-group">
+                                    <div class="dose" data-type="vaccine" data-dose="1">
+                                    Lần 1: 1/2/2025 <span class="arrow_1">→</span>
+                                    </div>
+                                    <div id="vaccine-details-1" class="details">
+                                    Lần 2: 1/3/2025<br>
+                                    Lần 3: 1/4/2025<br>
+                                    Lần 4: 1/5/2025
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info_section">
+                        <div class="label_bold">Tẩy giun:</div>
+                        <div class="value">Đã tẩy</div>
+                    </div>
+                </div>
+                    <div class="grouppp">
+                        <button class="buy_pet">nhận nuôi</button>
+                    </div>
+                <!-- kết thúc phần information -->
+            </div>
+        </div>
+        <!-- bắt đầu phần mỏ tả -->
+        
+        <div class="container">
+            <div class="description-section">
+              <div class="description-header">
+                Mô tả: <span>→</span>
+              </div>
+              <div id="description-content" class="description-content">
+                Mèo Anh lông dài chân lùn tai cụp màu golden sẽ hủy một mẫu thời trang ngọc trai vô cùng sang trọng và đáng yêu. Vơi bộ lông dài, mèo có sức hút khó cưỡng, tao thần lộng lẫy và quyến rũ. Lông của mèo có sức hấp dẫn và quý phái đặc trưng, tao thần lộng lẫy và quyến rũ. Đôi chân ngắn, giúp chúng có dáng điêu để thương và lùn thái. Đặc biệt, đôi tai cụp tao thêm sự ngộ nghĩnh và mèm mại cho khuôn mặt tròn trịa, lẫm thêm vẻ đẹp thương.
+              </div>
+            </div>
+          </div>
+        <!-- kết thúc phần mỏ tả -->
+         <!-- bắt đầu làm sản phẩm gợi ý  -->
+        <div class="align">
+            <div class="slider-container">
+                <div class="slider-title">Gợi Ý</div>
+                <div class="group_related_pet">
+                    <button class="arrow left">&lt;</button>
+                    <div class="slider">
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/150?text=Cat+1" alt="Cat 1">
+                            <p>♀ Cái<br>Mèo Anh lông dài chân lùn tai cụp màu golden<br><span class="price">50.000.000đ</span></p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/150?text=Cat+2" alt="Cat 2">
+                            <p>♂ Cái<br>Mèo Anh lông dài chân lùn tai cụp màu golden<br><span class="price">50.000.000đ</span></p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/150?text=Cat+3" alt="Cat 3">
+                            <p>♂ Cái<br>Mèo Anh lông dài chân lùn tai cụp màu golden<br><span class="price">50.000.000đ</span></p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/150?text=Cat+4" alt="Cat 4">
+                            <p>♀ Cái<br>Mèo Anh lông dài chân lùn tai cụp màu golden<br><span class="price">50.000.000đ</span></p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/150?text=Cat+4" alt="Cat 5">
+                            <p>♀ Cái<br>Mèo Anh lông dài chân lùn tai cụp màu golden<br><span class="price">50.000.000đ</span></p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/150?text=Cat+4" alt="Cat 6">
+                            <p>♀ Cái<br>Mèo Anh lông dài chân lùn tai cụp màu golden<br><span class="price">50.000.000đ</span></p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/150?text=Cat+4" alt="Cat 7">
+                            <p>♀ Cái<br>Mèo Anh lông dài chân lùn tai cụp màu golden<br><span class="price">50.000.000đ</span></p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://via.placeholder.com/150?text=Cat+4" alt="Cat 8">
+                            <p>♀ Cái<br>Mèo Anh lông dài chân lùn tai cụp màu golden<br><span class="price">50.000.000đ</span></p>
+                        </div>
+                    </div>
+                    <button class="arrow right">&gt;</button>
+                </div>
+            </div>
+        </div>
+         <!-- Kết thúc làm sản phẩm gợi ý  -->
     </main>
-    
+    <script>
+        // Lắng nghe sự kiện click trên phần tử dose
+        document.querySelectorAll('.dose').forEach(item => {
+          item.addEventListener('click', function() {
+            const type = this.getAttribute('data-type');
+            const doseNumber = this.getAttribute('data-dose');
+            const details = document.getElementById(`${type}-details-${doseNumber}`);
+            
+            // Toggle hiển thị/ẩn chi tiết của phần tử được click
+            if (details) {
+              details.classList.toggle('active');
+            }
+          });
+        });
+      </script>
+      <script>
+        // Lắng nghe sự kiện click trên tiêu đề mô tả
+        document.querySelector('.description-header').addEventListener('click', function() {
+          const content = document.getElementById('description-content');
+          
+          // Toggle hiển thị/ẩn nội dung mô tả
+          if (content) {
+            content.classList.toggle('active');
+          }
+        });
+      </script>
+        <script>
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const leftArrow = document.querySelector('.arrow.left');
+            const rightArrow = document.querySelector('.arrow.right');
+            let currentIndex = 0;
+        
+            function updateSlider() {
+              const scrollAmount = slides[0].clientWidth + 10; // Cộng 10px cho margin
+              slider.scrollTo({
+                left: currentIndex * scrollAmount,
+                behavior: 'smooth'
+              });
+            }
+        
+            leftArrow.addEventListener('click', () => {
+              if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+              }
+            });
+        
+            rightArrow.addEventListener('click', () => {
+              if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                updateSlider();
+              }
+            });
+        
+            // Tự động điều chỉnh khi resize window
+            window.addEventListener('resize', updateSlider);
+          </script>
+        <footer id="footer"></footer>
+        <script src="./js/main.js"></script>
+        <script src="./js/components/setup.js"></script>
+      
 </body>
 </html>
