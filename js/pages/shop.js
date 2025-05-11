@@ -1,48 +1,3 @@
-// Dropdown Handler
-const dropdownHandler = {
-    init() {
-        document.querySelectorAll('.dropdown-input').forEach(input => {
-            const dropdown = input.parentElement;
-            const list = dropdown.querySelector('.dropdown-list');
-            const options = list.querySelectorAll('.option');
-
-            this.setupEventListeners(input, list, options);
-        });
-    },
-
-    setupEventListeners(input, list, options) {
-        input.addEventListener('focus', () => this.showDropdown(list));
-        input.addEventListener('blur', () => this.hideDropdown(list));
-        input.addEventListener('input', () => this.filterOptions(input, options));
-
-        options.forEach(option => {
-            option.addEventListener('click', () => this.selectOption(input, list, option));
-        });
-    },
-
-    showDropdown(list) {
-        list.style.display = 'block';
-    },
-
-    hideDropdown(list) {
-        setTimeout(() => {
-            list.style.display = 'none';
-        }, 100);
-    },
-
-    filterOptions(input, options) {
-        const value = input.value.toLowerCase();
-        options.forEach(option => {
-            option.style.display = option.textContent.toLowerCase().includes(value) ? 'block' : 'none';
-        });
-    },
-
-    selectOption(input, list, option) {
-        input.value = option.textContent;
-        list.style.display = 'none';
-    }
-};
-
 // Filter Handler
 const filterHandler = {
     init() {
@@ -76,9 +31,44 @@ const filterHandler = {
     },
 
     resetFilters() {
-        document.querySelectorAll('.dropdown-input').forEach(input => input.value = '');
-        document.querySelector('input[name="gender"][value="none"]').checked = true;
-        document.querySelector('input[name="vaccination"][value="none"]').checked = true;
+        // Reset breed select
+        const breedInput = document.getElementById('cat-breed');
+        if (breedInput) {
+            breedInput.value = '';
+            // Remove active class from options
+            const options = breedInput.closest('.custom-select').querySelector('.select-options');
+            options.classList.remove('active');
+        }
+
+        // Reset gender radio
+        const defaultGender = document.querySelector('input[name="gender"][value="none"]');
+        if (defaultGender) {
+            defaultGender.checked = true;
+        }
+
+        // Reset price range
+        const priceRange = document.getElementById('price-range');
+        if (priceRange) {
+            priceRange.value = '';
+            // Remove active class from options
+            const options = priceRange.closest('.custom-select').querySelector('.select-options');
+            options.classList.remove('active');
+        }
+
+        // Reset vaccination radio
+        const defaultVaccination = document.querySelector('input[name="vaccination"][value="none"]');
+        if (defaultVaccination) {
+            defaultVaccination.checked = true;
+        }
+
+        // Reset any hidden inputs or data attributes
+        document.querySelectorAll('.select-input').forEach(input => {
+            input.dataset.value = '';
+        });
+
+        // Refresh the product display
+        const productType = getProductTypeFromUrl();
+        shopProducts.fetchAndDisplayProducts(productType, 20);
     }
 };
 
@@ -198,6 +188,101 @@ const paginationHandler = {
     }
 };
 
+const customSelectHandler = {
+    init() {
+        document.querySelectorAll('.custom-select').forEach(select => {
+            this.setupSelect(select);
+        });
+    },
+
+    setupSelect(select) {
+        const input = select.querySelector('.select-input');
+        const options = select.querySelector('.select-options');
+        let highlightedIndex = -1;
+
+        // Xử lý input
+        input.addEventListener('input', () => {
+            const value = input.value.toLowerCase();
+            let hasVisibleOptions = false;
+
+            options.classList.add('active');
+            
+            options.querySelectorAll('li').forEach(option => {
+                const text = option.textContent.toLowerCase();
+                const isVisible = text.includes(value);
+                option.classList.toggle('hidden', !isVisible);
+                if (isVisible) hasVisibleOptions = true;
+            });
+
+            options.classList.toggle('empty', !hasVisibleOptions);
+            highlightedIndex = -1;
+        });
+
+        // Xử lý focus
+        input.addEventListener('focus', () => {
+            options.classList.add('active');
+        });
+
+        // Xử lý keyboard navigation
+        input.addEventListener('keydown', (e) => {
+            const visibleOptions = Array.from(options.querySelectorAll('li:not(.hidden)'));
+            
+            switch(e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    highlightedIndex = Math.min(highlightedIndex + 1, visibleOptions.length - 1);
+                    this.updateHighlight(visibleOptions, highlightedIndex);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    highlightedIndex = Math.max(highlightedIndex - 1, 0);
+                    this.updateHighlight(visibleOptions, highlightedIndex);
+                    break;
+                case 'Enter':
+                    e.preventDefault();
+                    if (highlightedIndex >= 0) {
+                        this.selectOption(visibleOptions[highlightedIndex], input, options);
+                    }
+                    break;
+                case 'Escape':
+                    options.classList.remove('active');
+                    input.blur();
+                    break;
+            }
+        });
+
+        // Xử lý click option
+        options.querySelectorAll('li').forEach(option => {
+            option.addEventListener('click', () => {
+                this.selectOption(option, input, options);
+                options.classList.remove('active');
+            });
+        });
+
+        // Đóng dropdown khi click ngoài
+        document.addEventListener('click', (e) => {
+            if (!select.contains(e.target)) {
+                options.classList.remove('active');
+            }
+        });
+    },
+
+    updateHighlight(options, index) {
+        options.forEach(opt => opt.classList.remove('highlighted'));
+        if (index >= 0) {
+            options[index].classList.add('highlighted');
+            options[index].scrollIntoView({ block: 'nearest' });
+        }
+    },
+
+    selectOption(option, input, options) {
+        input.value = option.textContent;
+        input.dataset.value = option.dataset.value;
+        options.classList.remove('active');
+        input.focus();
+    }
+};
+
 import { ProductHandler } from "../components/productHandler.js";  // Thêm .js
 
 const shopProducts = new ProductHandler({
@@ -249,9 +334,9 @@ function updatePageTitle(type) {
 document.addEventListener('DOMContentLoaded', () => {
     const productType = getProductTypeFromUrl();
     
-    dropdownHandler.init();
     filterHandler.init();
     paginationHandler.init();
+    customSelectHandler.init();
     
     // Cập nhật tiêu đề
     updatePageTitle(productType);
