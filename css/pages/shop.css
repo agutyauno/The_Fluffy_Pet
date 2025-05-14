@@ -139,7 +139,7 @@ label {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(calc(260px*var(--scale-factor)), 1fr));
-    grid-template-rows: repeat(auto-fill, calc(420px*var(--scale-factor)));
+    grid-template-rows: repeat(auto-fill, calc(450px*var(--scale-factor)));
     justify-items: center;
     gap: calc(20px*var(--scale-factor));
 }
@@ -147,7 +147,7 @@ label {
 /*========== product item ==========*/
 .product-item {
     width: calc(260px*var(--scale-factor));
-    height: calc(420px*var(--scale-factor));
+    height: calc(450px*var(--scale-factor));
     background-color: var(--primary-color);
     border-radius: calc(10px*var(--scale-factor));
     border: 1px solid #ccc;
@@ -192,6 +192,7 @@ label {
 
 .product-price {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     margin-top: var(--spacing-small);
     margin-left: var(--spacing-medium);
@@ -206,6 +207,7 @@ label {
 }
 
 .product-current_price {
+    width: 100%;
     font-size: calc(25px*var(--scale-factor));
     font-weight: var(--font-semi-bold);
     color: var(--color-dark-blue);

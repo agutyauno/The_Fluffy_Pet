@@ -153,7 +153,7 @@ const PromoManager = {
         this.productHandler = new ProductHandler({
             apiBaseUrl: 'https://localhost:5201/api',
             gridSelector: '.promo-grid',
-            selectButtonText: 'CHỌN',
+            selectButtonText: 'Thêm vào giỏ',
         });
 
         this.loadPromoProducts();

@@ -16,10 +16,10 @@ export class ProductHandler {
             let endpoint;
             switch(type) {
                 case 'cats':
-                    endpoint = 'pets/cats';
+                    endpoint = 'cats';
                     break;
                 case 'dogs':
-                    endpoint = 'pets/dogs';
+                    endpoint = 'dogs';
                     break;
                 default:
                     endpoint = 'Products';
@@ -35,7 +35,6 @@ export class ProductHandler {
             this.renderProducts(data, type);
         } catch (error) {
             console.error('Error fetching products:', error);
-            this.showError();
         }
     }
 

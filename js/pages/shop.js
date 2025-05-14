@@ -288,9 +288,17 @@ import { ProductHandler } from "../components/productHandler.js";  // Thêm .js
 const shopProducts = new ProductHandler({
     apiBaseUrl: 'https://localhost:5201/api',
     selectButtonText: 'Thêm vào giỏ',
-    onSelect: (item) => {
-        // Xử lý thêm vào giỏ hàng
-        console.log('Added to cart:', item);
+    onSelect: (item, type) => {
+        console.log(`Selected ${type} item:`, item);
+        if (type === 'cats' ) {
+            window.location.href = `./Shopping_Pet.html?${item.catId}`;
+        }
+        else if (type === 'dogs'){
+            window.location.href = `./Shopping_Pet.html?${item.dogId}`;
+        }
+        else{
+            window.location.href = `./shoppingfood.html?productId=${item.productId}`
+        }
     }
 });
 
