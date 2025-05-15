@@ -1,48 +1,3 @@
-// Dropdown Handler
-const dropdownHandler = {
-    init() {
-        document.querySelectorAll('.dropdown-input').forEach(input => {
-            const dropdown = input.parentElement;
-            const list = dropdown.querySelector('.dropdown-list');
-            const options = list.querySelectorAll('.option');
-
-            this.setupEventListeners(input, list, options);
-        });
-    },
-
-    setupEventListeners(input, list, options) {
-        input.addEventListener('focus', () => this.showDropdown(list));
-        input.addEventListener('blur', () => this.hideDropdown(list));
-        input.addEventListener('input', () => this.filterOptions(input, options));
-
-        options.forEach(option => {
-            option.addEventListener('click', () => this.selectOption(input, list, option));
-        });
-    },
-
-    showDropdown(list) {
-        list.style.display = 'block';
-    },
-
-    hideDropdown(list) {
-        setTimeout(() => {
-            list.style.display = 'none';
-        }, 100);
-    },
-
-    filterOptions(input, options) {
-        const value = input.value.toLowerCase();
-        options.forEach(option => {
-            option.style.display = option.textContent.toLowerCase().includes(value) ? 'block' : 'none';
-        });
-    },
-
-    selectOption(input, list, option) {
-        input.value = option.textContent;
-        list.style.display = 'none';
-    }
-};
-
 // Filter Handler
 const filterHandler = {
     init() {
@@ -76,9 +31,44 @@ const filterHandler = {
     },
 
     resetFilters() {
-        document.querySelectorAll('.dropdown-input').forEach(input => input.value = '');
-        document.querySelector('input[name="gender"][value="none"]').checked = true;
-        document.querySelector('input[name="vaccination"][value="none"]').checked = true;
+        // Reset breed select
+        const breedInput = document.getElementById('cat-breed');
+        if (breedInput) {
+            breedInput.value = '';
+            // Remove active class from options
+            const options = breedInput.closest('.custom-select').querySelector('.select-options');
+            options.classList.remove('active');
+        }
+
+        // Reset gender radio
+        const defaultGender = document.querySelector('input[name="gender"][value="none"]');
+        if (defaultGender) {
+            defaultGender.checked = true;
+        }
+
+        // Reset price range
+        const priceRange = document.getElementById('price-range');
+        if (priceRange) {
+            priceRange.value = '';
+            // Remove active class from options
+            const options = priceRange.closest('.custom-select').querySelector('.select-options');
+            options.classList.remove('active');
+        }
+
+        // Reset vaccination radio
+        const defaultVaccination = document.querySelector('input[name="vaccination"][value="none"]');
+        if (defaultVaccination) {
+            defaultVaccination.checked = true;
+        }
+
+        // Reset any hidden inputs or data attributes
+        document.querySelectorAll('.select-input').forEach(input => {
+            input.dataset.value = '';
+        });
+
+        // Refresh the product display
+        const productType = getProductTypeFromUrl();
+        shopProducts.fetchAndDisplayProducts(productType, 20);
     }
 };
 
@@ -198,53 +188,168 @@ const paginationHandler = {
     }
 };
 
-const productHandler = {
-    async fetchAndDisplayProducts(type, limit = 0) {
-        try {
-            const response = await fetch(`https://localhost:5201/api/${type}?limit=${limit}`);
-            const data = await response.json();
-            this.renderProducts(data, type);
-        } catch (error) {
-            console.error('Error fetching products:', error);
-            this.showError();
+const customSelectHandler = {
+    init() {
+        document.querySelectorAll('.custom-select').forEach(select => {
+            this.setupSelect(select);
+        });
+    },
+
+    setupSelect(select) {
+        const input = select.querySelector('.select-input');
+        const options = select.querySelector('.select-options');
+        let highlightedIndex = -1;
+
+        // Xử lý input
+        input.addEventListener('input', () => {
+            const value = input.value.toLowerCase();
+            let hasVisibleOptions = false;
+
+            options.classList.add('active');
+            
+            options.querySelectorAll('li').forEach(option => {
+                const text = option.textContent.toLowerCase();
+                const isVisible = text.includes(value);
+                option.classList.toggle('hidden', !isVisible);
+                if (isVisible) hasVisibleOptions = true;
+            });
+
+            options.classList.toggle('empty', !hasVisibleOptions);
+            highlightedIndex = -1;
+        });
+
+        // Xử lý focus
+        input.addEventListener('focus', () => {
+            options.classList.add('active');
+        });
+
+        // Xử lý keyboard navigation
+        input.addEventListener('keydown', (e) => {
+            const visibleOptions = Array.from(options.querySelectorAll('li:not(.hidden)'));
+            
+            switch(e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    highlightedIndex = Math.min(highlightedIndex + 1, visibleOptions.length - 1);
+                    this.updateHighlight(visibleOptions, highlightedIndex);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    highlightedIndex = Math.max(highlightedIndex - 1, 0);
+                    this.updateHighlight(visibleOptions, highlightedIndex);
+                    break;
+                case 'Enter':
+                    e.preventDefault();
+                    if (highlightedIndex >= 0) {
+                        this.selectOption(visibleOptions[highlightedIndex], input, options);
+                    }
+                    break;
+                case 'Escape':
+                    options.classList.remove('active');
+                    input.blur();
+                    break;
+            }
+        });
+
+        // Xử lý click option
+        options.querySelectorAll('li').forEach(option => {
+            option.addEventListener('click', () => {
+                this.selectOption(option, input, options);
+                options.classList.remove('active');
+            });
+        });
+
+        // Đóng dropdown khi click ngoài
+        document.addEventListener('click', (e) => {
+            if (!select.contains(e.target)) {
+                options.classList.remove('active');
+            }
+        });
+    },
+
+    updateHighlight(options, index) {
+        options.forEach(opt => opt.classList.remove('highlighted'));
+        if (index >= 0) {
+            options[index].classList.add('highlighted');
+            options[index].scrollIntoView({ block: 'nearest' });
         }
     },
 
-    renderProducts(data, type) {
-        const productGrid = document.querySelector('.product-grid');
-        productGrid.innerHTML = '';
-
-        data.forEach(item => {
-            const discountedPrice = item.price * (1 - item.discount / 100);
-            const productItem = document.createElement('div');
-            productItem.className = 'product-item';
-            
-            productItem.innerHTML = `
-                <img src="${item.imageUrl || './assets/image/img-placeholder.png'}" alt="${item.name}" class="product-img">
-                <div class="product-tag">${item.breed || item.category || ''}</div>
-                ${type !== 'products' ? `
-                    <div class="pet_gender">${item.gender ? 'Đực' : 'Cái'}</div>
-                ` : ''}
-                <p class="product-name">${item.name}</p>
-                <div class="product-price">
-                    <p class="product-current_price">${discountedPrice.toLocaleString()}<span class="product-price-unit">đ</span></p>
-                    ${item.discount > 0 ? `
-                        <p class="product-old_price">${item.price.toLocaleString()}<span class="product-price-unit">đ</span></p>
-                        <p class="discount">${item.discount}<span class="product-discount_unit">%</span></p>
-                    ` : ''}
-                </div>
-                <input type="button" value="chọn" onclick="select${type.slice(0,-1)}(${item.id})">
-            `;
-            
-            productGrid.appendChild(productItem);
-        });
-    },
+    selectOption(option, input, options) {
+        input.value = option.textContent;
+        input.dataset.value = option.dataset.value;
+        options.classList.remove('active');
+        input.focus();
+    }
 };
+
+import { ProductHandler } from "../components/productHandler.js";  // Thêm .js
+
+const shopProducts = new ProductHandler({
+    apiBaseUrl: 'https://localhost:5201/api',
+    selectButtonText: 'Thêm vào giỏ',
+    onSelect: (item, type) => {
+        console.log(`Selected ${type} item:`, item);
+        if (type === 'cats' ) {
+            window.location.href = `./Shopping_Pet.html?type=cat&catId=${item.catId}`;
+        }
+        else if (type === 'dogs'){
+            window.location.href = `./Shopping_Pet.html?type=dog&dogId=${item.dogId}`;
+        }
+        else{
+            window.location.href = `./shoppingfood.html?productId=${item.productId}`
+        }
+    }
+});
+
+// Hàm lấy loại sản phẩm từ URL
+function getProductTypeFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('type') || 'all'; // Mặc định hiển thị tất cả nếu không có type
+}
+
+function updatePageBanner(type) {
+    const banner = document.querySelector('.shop-banner');
+    if (banner) {
+        switch (type) {
+            case 'cats':
+                banner.src = './assets/image/banner/cat-banner.jpg';
+                break;
+            case 'dogs':
+                banner.src = './assets/image/banner/dog-banner.jpg';
+                break;
+            default:
+                banner.src = './assets/image/banner/default-banner.jpg';
+        }
+    }
+}
+
+// Hàm cập nhật tiêu đề trang
+function updatePageTitle(type) {
+    const titleMap = {
+        'cats': 'Bé Mèo',
+        'dogs': 'Bé Chó',
+        'products': 'Sản Phẩm',
+    };
+    
+    const shopTitle = document.querySelector('.shop-title');
+    if (shopTitle) {
+        shopTitle.textContent = titleMap[type] || 'Tất Cả Sản Phẩm';
+    }
+}
 
 // Initialize all handlers
 document.addEventListener('DOMContentLoaded', () => {
-    dropdownHandler.init();
+    const productType = getProductTypeFromUrl();
+    
     filterHandler.init();
-    // Có thể gọi với các tham số khác nhau
-    productHandler.fetchAndDisplayProducts('cats', 20);
+    paginationHandler.init();
+    customSelectHandler.init();
+    
+    // Cập nhật tiêu đề
+    updatePageTitle(productType);
+    updatePageBanner(productType);
+    
+    // Fetch sản phẩm theo loại
+    shopProducts.fetchAndDisplayProducts(productType, 20);
 });

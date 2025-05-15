@@ -16,6 +16,9 @@
         <!-- banner -->
         <img src="./assets/image/img-placeholder.png" alt="shop banner" class="shop-banner">
 
+        <!-- Thêm tiêu đề -->
+        <h1 class="shop-title">Tất Cả Sản Phẩm</h1>
+
         <!-- shop -->
         <div class="shop-container">
             <!-- filter -->
@@ -24,15 +27,16 @@
                 <h2 style="margin-top: var(--spacing-large);">Điều kiện lọc</h2>
                 <!-- Lọc loại mèo -->
                 <div class="filter-section">
-                    <div class="dropdown">
-                        <input type="text" class="dropdown-input" id="cat-breed" placeholder="Chọn giống mèo">
-                        <div class="dropdown-list">
-                            <!-- Danh sách loại mèo - thêm theo dữ liệu của bạn -->
-                            <div class="option">Mèo Ba Tư</div>
-                            <div class="option">Mèo Anh Lông Ngắn</div>
-                            <div class="option">Mèo Xiêm</div>
-                            <!-- Thêm các giống mèo khác -->
-                        </div>
+                    <div class="custom-select">
+                        <input type="text" class="select-input" id="cat-breed" placeholder="Chọn giống mèo"
+                        autocomplete="off">
+                        <ul class="select-options">
+                            <li data-value="xiêm">Mèo Xiêm</li>
+                            <li data-value="anh">Mèo Anh Lông Ngắn</li>
+                            <li data-value="munchkin">Mèo Munchkin</li>
+                            <li data-value="scottish">Mèo Scottish Fold</li>
+                            <li data-value="persian">Mèo Ba Tư</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -50,15 +54,14 @@
 
                 <!-- Chọn mức giá -->
                 <div class="filter-section">
-                    <div class="dropdown">
-                        <input type="text" class="dropdown-input" id="price-range" placeholder="Chọn mức giá">
-                        <div class="dropdown-list">
-                            <!-- Danh sách mức giá -->
-                            <div class="option">từ 100k -> 500k</div>
-                            <div class="option">từ 500k -> 1tr</div>
-                            <div class="option">từ 1tr -> 5tr</div>
-                            <!-- Thêm các mức giá khác -->
-                        </div>
+                    <div class="custom-select">
+                        <input type="text" class="select-input" id="price-range" placeholder="Chọn mức giá"
+                        autocomplete="off">
+                        <ul class="select-options">
+                            <li data-value="0-500000">Dưới 500,000đ</li>
+                            <li data-value="500000-1000000">500,000đ - 1,000,000đ</li>
+                            <li data-value="1000000-5000000">1,000,000đ - 5,000,000đ</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -98,7 +101,7 @@
                         </div>
                         <input type="button" value="chọn">
                     </div>
-                    
+
                 </div>
 
                 <!-- pagination -->
@@ -112,7 +115,7 @@
 
     <script src="./js/main.js"></script>
     <script src="./js/components/setup.js"></script>
-    <script src="./js/pages/shop.js"></script>
+    <script type="module" src="./js/pages/shop.js"></script>
 </body>
 
 </html>

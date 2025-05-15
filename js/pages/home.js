@@ -1,3 +1,5 @@
+import { ProductHandler } from '../components/productHandler.js';
+
 const SliderManager = {
     listImage: null,
     imgs: null,
@@ -51,7 +53,7 @@ const SliderManager = {
         } else {
             this.currentIndex--;
         }
-        
+
         this.listImage.style.transform = `translateX(${-width * this.currentIndex}px)`;
 
         setTimeout(() => {
@@ -144,14 +146,42 @@ const PetSearchManager = {
     }
 };
 
-// Initialize managers when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    SliderManager.init();
-    PetSearchManager.init();
-});
+const PromoManager = {
+    productHandler: null,
+
+    init() {
+        this.productHandler = new ProductHandler({
+            apiBaseUrl: 'https://localhost:5201/api',
+            gridSelector: '.promo-grid',
+            selectButtonText: 'Thêm vào giỏ',
+            onSelect: (item, type) => {
+                console.log(`Selected ${type} item:`, item);
+                if (type === 'cats') {
+                    window.location.href = `./Shopping_Pet.html?type=cat&catId=${item.catId}`;
+                }
+                else if (type === 'dogs') {
+                    window.location.href = `./Shopping_Pet.html?type=dog&dogId=${item.dogId}`;
+                }
+                else {
+                    window.location.href = `./shoppingfood.html?productId=${item.productId}`
+                }
+            }
+        });
+
+        this.loadPromoProducts();
+    },
+
+    async loadPromoProducts() {
+        try {
+            await this.productHandler.fetchAndDisplayProducts('products', 15);
+        } catch (error) {
+            console.error('Error loading products:', error);
+        }
+    },
+};
 
 // Pet Search Functionality
-document.addEventListener('DOMContentLoaded', function() {
+function initializeCategoryTabs() {
     const categoryTabs = document.querySelectorAll('.category-tab');
     const dogBreeds = document.getElementById('dogBreeds');
     const catBreeds = document.getElementById('catBreeds');
@@ -160,10 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
         tab.addEventListener('click', () => {
             // Remove active class from all tabs
             categoryTabs.forEach(t => t.classList.remove('active'));
-            
+
             // Add active class to clicked tab
             tab.classList.add('active');
-            
+
             // Show/hide appropriate content
             const category = tab.dataset.category;
             if (category === 'dog') {
@@ -175,4 +205,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+}
+
+// Initialize all managers when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    SliderManager.init();
+    PetSearchManager.init();
+    PromoManager.init();
+    initializeCategoryTabs();
 });
+
