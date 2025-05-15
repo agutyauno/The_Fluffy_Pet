@@ -106,7 +106,7 @@
 
 .social-media {
     display: flex;
-    gap: calc(20px * var(--scale-factor));
+    gap: calc(10px * var(--scale-factor));
     margin: calc(10px * var(--scale-factor)) 0;
 }
 

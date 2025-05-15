@@ -1,0 +1,379 @@
+/* CSS chung */
+
+:root {
+    --scale-factor: 1;
+}
+
+.centered-fixed {
+    max-width: 80%;
+    margin: calc(50px * var(--scale-factor)) auto;
+    padding: 0 20px;
+}
+
+.group_head {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: calc(20px * var(--scale-factor));
+}
+
+.pet {
+    width: 100%;
+    max-width: calc(500px * var(--scale-factor));
+    height: auto;
+}
+
+.image_small {
+    width: calc(110px * var(--scale-factor));
+    height: calc(100px * var(--scale-factor));
+    border-radius: 10px;
+    margin-right: calc(5px * var(--scale-factor));
+}
+
+/* Phần bên phải */
+.name_pet {
+    font-size: calc(40px * var(--scale-factor));
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.Buy {
+    font-size: calc(48px * var(--scale-factor));
+    font-weight: bold;
+    color: red;
+    margin-bottom: calc(15px * var(--scale-factor));
+}
+
+.information_right {
+    padding-left: calc(20px * var(--scale-factor));
+    flex: 1;
+}
+
+.group {
+    padding-bottom: calc(10px * var(--scale-factor));
+    margin-bottom: calc(15px * var(--scale-factor));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 0.25px solid;
+    align-items: center;
+}
+
+.info_section {
+    display: flex;
+    align-items: center;
+}
+
+.label_bold {
+    font-weight: bold;
+    font-size: calc(24px * var(--scale-factor));
+}
+
+.value {
+    margin-left: 5px;
+    font-size: calc(24px * var(--scale-factor));
+}
+
+/* Phần tiêm chủng */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.section h3 {
+    margin: 0;
+    font-size: calc(16px * var(--scale-factor));
+    color: #333;
+}
+
+.dose-group {
+    margin: 5px 0;
+    border-radius: 5px;
+    max-width: calc(250px * var(--scale-factor));
+}
+
+.arrow_1 {
+    margin-left: calc(10px * var(--scale-factor));
+}
+
+.dose {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    font-size: calc(24px * var(--scale-factor));
+}
+
+.details {
+    display: none;
+    padding: calc(10px * var(--scale-factor));
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: #000000;
+    font-size: calc(24px * var(--scale-factor));
+}
+
+.details.active {
+    display: block;
+}
+
+.group_group {
+    display: flex;
+}
+
+/* Kết thúc tiêm chủng */
+.buy_pet {
+    border: none;
+    border-radius: calc(35px * var(--scale-factor));
+    margin-top: calc(20px * var(--scale-factor));
+    width: calc(150px * var(--scale-factor));
+    height: calc(50px * var(--scale-factor));
+    background-color: #FF0000;
+    color: white;
+    font-size: calc(24px * var(--scale-factor));
+}
+
+.grouppp {
+    text-align: right;
+}
+
+/* Phần mô tả */
+.description-section {
+    margin-top: 20px;
+}
+
+.description-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.description-header:hover {
+    color: #555;
+}
+
+.description-content {
+    display: none;
+    padding: 10px 0;
+    font-size: calc(24px * var(--scale-factor));
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.description-content.active {
+    display: block;
+}
+
+/* Phần gợi ý sản phẩm */
+.align {
+    max-width: 100%;
+    margin: 0 auto 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.slider-container {
+    position: relative;
+    padding: calc(20px * var(--scale-factor));
+    text-align: center;
+}
+
+.group_related_pet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-title {
+    font-size: calc(30px * var(--scale-factor));
+    font-weight: bold;
+    color: #333;
+    margin-bottom: calc(20px * var(--scale-factor));
+}
+
+.slider {
+    max-width: 100%;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.slide {
+    min-width: calc(180px * var(--scale-factor));
+    height: calc(280px * var(--scale-factor));
+    background-color: #e0f7fa;
+    margin: 0 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slide img {
+    width: calc(160px * var(--scale-factor));
+    height: calc(160px * var(--scale-factor));
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slide p {
+    margin: 10px 0 0;
+    font-size: calc(16px * var(--scale-factor));
+    color: #333;
+}
+
+.slide .price {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.arrow {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background-color: #ddd;
+    border: none;
+    font-size: calc(16px * var(--scale-factor));
+    padding: calc(10px * var(--scale-factor));
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+.arrow:hover {
+    background-color: #bbb;
+}
+
+/* Responsive cho smartphone và tablet */
+@media (max-width: 768px) {
+    .centered-fixed {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .group_head {
+        flex-direction: column;
+    }
+
+    .information_right {
+        padding-left: 0;
+    }
+
+    .pet {
+        max-width: 100%;
+    }
+
+    .image_small {
+        width: 60px;
+        height: 60px;
+    }
+
+    .name_pet {
+        font-size: calc(80px * var(--scale-factor));
+    }
+
+    .Buy {
+        font-size: calc(60px * var(--scale-factor));
+    }
+
+    .label_bold,
+    .value,
+    .dose,
+    .details {
+        font-size: calc(40px * var(--scale-factor));
+    }
+
+    .buy_pet {
+        width: calc(220px * var(--scale-factor));
+        height: calc(80px * var(--scale-factor));
+        font-size: calc(40px * var(--scale-factor));
+    }
+
+    .description-header {
+        font-size: calc(40px * var(--scale-factor));
+    }
+
+    .description-content {
+        font-size: calc(50px * var(--scale-factor));
+    }
+
+    .slider {
+        max-width: 100%;
+    }
+
+    .slide {
+        min-width: 150px;
+        height: 250px;
+    }
+
+    .slide img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .slide p {
+        font-size: calc(35px * var(--scale-factor));
+    }
+}
+
+@media (max-width: 480px) {
+    .name_pet {
+        font-size: calc(80px * var(--scale-factor));
+    }
+
+    .Buy {
+        font-size: calc(70px * var(--scale-factor));
+    }
+
+    .label_bold,
+    .value,
+    .dose,
+    .details {
+        font-size: calc(50px * var(--scale-factor));
+    }
+
+    .buy_pet {
+        width: 100px;
+        height: 35px;
+        font-size: calc(50px * var(--scale-factor));
+    }
+
+    .description-header {
+        font-size: calc(50px * var(--scale-factor));
+    }
+
+    .description-content {
+        font-size: calc(50px * var(--scale-factor));
+    }
+
+    .slide {
+        min-width: 120px;
+        height: 200px;
+    }
+
+    .slide img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .slide p {
+        font-size: calc(40px * var(--scale-factor));
+    }
+}
