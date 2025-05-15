@@ -168,7 +168,7 @@ function displayPetDetails(pet) {
                         <div class="section">
                             <div class="group_group">
                                 <div class="dose-group">
-                                    ${pet.vaccinations ? renderVaccinations(pet.vaccinations) : 'Chưa có thông tin tiêm chủng'}
+                                    ${pet.vaccinateDates ? renderVaccinations(pet.vaccinateDates) : 'Chưa có thông tin tiêm chủng'}
                                 </div>
                             </div>
                         </div>
@@ -202,21 +202,13 @@ function displayPetDetails(pet) {
 }
 
 // Add helper function for rendering vaccinations
-function renderVaccinations(vaccinations) {
-    if (!vaccinations || vaccinations.length === 0) return '';
+function renderVaccinations(vaccinateDates) {
+    if (!vaccinateDates || vaccinateDates.length === 0) return '';
     
-    return vaccinations.map((vac, index) => `
+    return vaccinateDates.map((date, index) => `
         <div class="dose" data-type="vaccine" data-dose="${index + 1}">
-            Lần ${index + 1}: ${new Date(vac.date).toLocaleDateString('vi-VN')}
-            ${index === 0 ? '<span class="arrow_1">→</span>' : ''}
+            Lần ${index + 1}: ${new Date(date).toLocaleDateString('vi-VN')}
         </div>
-        ${index === 0 ? `
-            <div id="vaccine-details-1" class="details">
-                ${vaccinations.slice(1).map((v, i) => 
-                    `Lần ${i + 2}: ${new Date(v.date).toLocaleDateString('vi-VN')}`
-                ).join('<br>')}
-            </div>
-        ` : ''}
     `).join('');
 }
 
