@@ -291,10 +291,10 @@ const shopProducts = new ProductHandler({
     onSelect: (item, type) => {
         console.log(`Selected ${type} item:`, item);
         if (type === 'cats' ) {
-            window.location.href = `./Shopping_Pet.html?${item.catId}`;
+            window.location.href = `./Shopping_Pet.html?type=cat&catId=${item.catId}`;
         }
         else if (type === 'dogs'){
-            window.location.href = `./Shopping_Pet.html?${item.dogId}`;
+            window.location.href = `./Shopping_Pet.html?type=dog&dogId=${item.dogId}`;
         }
         else{
             window.location.href = `./shoppingfood.html?productId=${item.productId}`

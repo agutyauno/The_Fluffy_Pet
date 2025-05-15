@@ -67,7 +67,7 @@ export class ProductHandler {
             discountedPrice = item.price * (1 - item.discount / 100);
             
             productItem.innerHTML = `
-                <img src="${item.imageUrl || this.config.imagePlaceholder}" alt="${item.name}" class="product-img">
+                <img src="${item.imageUrls[0] || this.config.imagePlaceholder}" alt="${item.name}" class="product-img">
                 <div class="product-tag">${item.breed || ''}</div>
                 <div class="pet_gender">${item.gender ? 'Đực' : 'Cái'}</div>
                 <p class="product-name">${item.name}</p>
