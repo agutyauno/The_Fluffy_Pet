@@ -1,3 +1,5 @@
+import { ProductHandler } from '../components/productHandler.js';
+
 const SliderManager = {
     listImage: null,
     imgs: null,
@@ -144,14 +146,37 @@ const PetSearchManager = {
     }
 };
 
-// Initialize managers when DOM is loaded
+const PromoManager = {
+    productHandler: null,
+
+    init() {
+        this.productHandler = new ProductHandler({
+            apiBaseUrl: 'https://localhost:5201/api',
+            gridSelector: '.promo-grid',
+            selectButtonText: 'Thêm vào giỏ',
+        });
+
+        this.loadPromoProducts();
+    },
+
+    async loadPromoProducts() {
+        try {
+            await this.productHandler.fetchAndDisplayProducts('products', 15);
+        } catch (error) {
+            console.error('Error loading products:', error);
+        }
+    },
+};
+
+// Initialize all managers when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     SliderManager.init();
     PetSearchManager.init();
+    PromoManager.init();
 });
 
 // Pet Search Functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const categoryTabs = document.querySelectorAll('.category-tab');
     const dogBreeds = document.getElementById('dogBreeds');
     const catBreeds = document.getElementById('catBreeds');
@@ -176,3 +201,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+

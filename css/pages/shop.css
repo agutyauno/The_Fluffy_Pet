@@ -23,7 +23,14 @@ img.shop-banner {
     justify-content: space-between;
 }
 
-    /*========== filter panel ==========*/
+.shop-title {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: var(--font-medium);
+    color: var(--color-dark);
+}
+
+/*========== filter panel ==========*/
 .filter-container {
     width: calc(370px*var(--scale-factor));
     height: calc(560px*var(--scale-factor));
@@ -61,11 +68,7 @@ label {
     color: black;
 }
 
-    /*========== Dropdown ==========*/
-.dropdown {
-    position: relative;
-}
-
+/*========== Dropdown ==========*/
 .dropdown-input {
     width: 100%;
     padding: 8px;
@@ -76,30 +79,7 @@ label {
     font-size: var(--font-medium);
 }
 
-.dropdown-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 10;
-    display: none;
-}
-
-.option {
-    padding: 8px;
-    cursor: pointer;
-}
-
-.option:hover {
-    background-color: #f0f0f0;
-}
-
-    /*========== Nhóm radio button ==========*/
+/*========== Nhóm radio button ==========*/
 .radio-group {
     height: calc(44px*var(--scale-factor));
     display: flex;
@@ -117,7 +97,7 @@ label {
     font-size: var(--font-small);
     font-weight: 300;
     text-align: center;
-    line-height:calc(44px*var(--scale-factor)) ;
+    line-height: calc(44px*var(--scale-factor));
     cursor: pointer;
     margin: 0;
 }
@@ -126,7 +106,7 @@ label {
     background-color: #FCE4EC;
 }
 
-    /*========== Nút tìm kiếm và reset ==========*/
+/*========== Nút tìm kiếm và reset ==========*/
 .search-button {
     width: calc(290px*var(--scale-factor));
     background-color: #3B5998;
@@ -151,24 +131,23 @@ label {
     margin-top: var(--spacing-medium);
 }
 
-    /*========== product grid ==========*/
+/*========== product grid ==========*/
 .product {
-    /* flex-grow: 2; */
     width: fit-content;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns:repeat(4, minmax(calc(260px*var(--scale-factor)),1fr));
-    grid-template-rows:repeat(auto-fill, calc(420px*var(--scale-factor)));
+    grid-template-columns: repeat(4, minmax(calc(260px*var(--scale-factor)), 1fr));
+    grid-template-rows: repeat(auto-fill, calc(450px*var(--scale-factor)));
     justify-items: center;
     gap: calc(20px*var(--scale-factor));
 }
 
-        /*========== product item ==========*/
+/*========== product item ==========*/
 .product-item {
     width: calc(260px*var(--scale-factor));
-    height: calc(420px*var(--scale-factor));
+    height: calc(450px*var(--scale-factor));
     background-color: var(--primary-color);
     border-radius: calc(10px*var(--scale-factor));
     border: 1px solid #ccc;
@@ -176,7 +155,7 @@ label {
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.product-img{
+.product-img {
     width: calc(257px*var(--scale-factor));
     height: calc(257px*var(--scale-factor));
     border: 1px solid #ccc;
@@ -195,7 +174,7 @@ label {
     border-radius: calc(10px*var(--scale-factor));
 }
 
-.pet_gender{
+.pet_gender {
     width: max-content;
     background-color: var(--border-color);
     margin-left: var(--spacing-medium);
@@ -205,46 +184,48 @@ label {
     font-size: var(--font-small);
 }
 
-.product-name{
+.product-name {
     margin-bottom: 0;
     margin-top: calc(10px*var(--scale-factor));
     margin-left: var(--spacing-medium);
 }
 
-.product-price{
+.product-price {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     margin-top: var(--spacing-small);
     margin-left: var(--spacing-medium);
 }
 
-.product-price>p{
+.product-price>p {
     margin: 0;
 }
 
-.product-price>p+p{
+.product-price>p+p {
     margin-left: 5px;
 }
 
-.product-current_price{
+.product-current_price {
+    width: 100%;
     font-size: calc(25px*var(--scale-factor));
     font-weight: var(--font-semi-bold);
     color: var(--color-dark-blue);
 }
 
-.product-old_price{
+.product-old_price {
     font-size: calc(15px*var(--scale-factor));
     text-align: justify;
     text-decoration: line-through;
 }
 
-.discount{
+.discount {
     font-size: var(--font-medium);
     font-weight: var(--font-semi-bold);
     color: var(--color-red);
 }
 
-.product-item>input{
+.product-item>input {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -255,9 +236,102 @@ label {
     font-size: var(--font-medium);
 }
 
-    /*========== pagination  ==========*/
+/*========== pagination  ==========*/
 .pagination {
     margin-top: var(--spacing-small);
     justify-self: center;
     font-size: var(--font-medium);
+}
+
+/* Custom Select Styling */
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.select-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    font-size: var(--font-medium);
+    transition: border-color 0.3s;
+}
+
+.select-input:focus {
+    outline: none;
+    border-color: var(--color-dark-blue);
+    box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.select-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 5px 5px;
+    max-height: calc(200px*var(--scale-factor));
+    overflow-y: auto;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    visibility: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.select-options.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.select-options li {
+    font-size: var(--font-medium);
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.select-options li:hover, 
+.select-options li.highlighted {
+    background-color: var(--color-light-pink);
+}
+
+.select-options li.hidden {
+    display: none;
+}
+
+.custom-select.active .select-options {
+    display: block;
+}
+
+/* Scrollbar styling cho select-options */
+.select-options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.select-options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.select-options::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.select-options::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Empty state styling */
+.select-options.empty::after {
+    content: 'Không tìm thấy kết quả';
+    display: block;
+    padding: 8px 12px;
+    color: var(--color-gray);
+    font-style: italic;
 }
