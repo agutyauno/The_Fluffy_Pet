@@ -62,8 +62,8 @@ a{
 }
 
 .icon{
-    width: calc(40px*var(--scale-factor));
-    height: calc(40px*var(--scale-factor));
+    width: calc(20px*var(--scale-factor));
+    height: calc(20px*var(--scale-factor));
 }
 
 body.navbar-fixed {
