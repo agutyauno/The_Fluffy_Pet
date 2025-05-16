@@ -205,6 +205,7 @@ function initializeCategoryTabs() {
             }
         });
     });
+<<<<<<< Updated upstream
 }
 
 // Initialize all managers when DOM is loaded
@@ -215,3 +216,29 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCategoryTabs();
 });
 
+=======
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const instaGrid = document.getElementById('instaGrid');
+    let scrollPosition = 0;
+    const speed = 0.2; // Tốc độ cuộn (pixel mỗi frame)
+    const postWidth = instaGrid.querySelector('.insta-post').offsetWidth; // Chiều rộng của mỗi post
+    const totalPosts = instaGrid.querySelectorAll('.insta-post').length; // Tổng số post
+    const originalPosts = totalPosts / 5; // Số post gốc (trước khi nhân bản)
+    const loopPoint = postWidth * originalPosts; // Điểm để reset vòng lặp
+
+    function scrollGrid() {
+        scrollPosition += speed;
+        // Nếu cuộn qua một chu kỳ (4 post gốc), reset vị trí
+        if (scrollPosition >= loopPoint) {
+            scrollPosition = 0;
+        }
+        instaGrid.style.transform = `translateX(-${scrollPosition}px)`;
+        requestAnimationFrame(scrollGrid);
+    }
+
+    // Bắt đầu cuộn
+    requestAnimationFrame(scrollGrid);
+});
+>>>>>>> Stashed changes
