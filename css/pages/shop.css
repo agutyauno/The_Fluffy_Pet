@@ -1,8 +1,8 @@
 main {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
+    /* align-content: center; */
     padding-bottom: 5%;
 }
 
@@ -10,6 +10,7 @@ main {
 img.shop-banner {
     width: calc(1636px*var(--scale-factor));
     height: calc(546px*var(--scale-factor));
+    align-self: center;
     margin-top: 5%;
     border-radius: calc(60px*var(--scale-factor));
     border: 1px solid;
@@ -30,115 +31,15 @@ img.shop-banner {
     color: var(--color-dark);
 }
 
-/*========== filter panel ==========*/
-.filter-container {
-    width: calc(370px*var(--scale-factor));
-    height: calc(560px*var(--scale-factor));
-    background-color: rgba(207, 156, 156, 0.2);
-    border-radius: calc(15px*var(--scale-factor));
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: inherit;
-}
-
-.filter-section {
-    margin-bottom: 15px;
-    width: calc(292px*var(--scale-factor));
-    height: calc(44px*var(--scale-factor));
-}
-
-.filter-container>h2 {
-    font-size: calc(25px*var(--scale-factor));
-    font-weight: var(--font-semi-bold);
-    align-self: flex-start;
-    margin: 0;
-    margin-left: var(--spacing-large);
-    margin-top: var(--spacing-medium);
-}
-
-h2+.filter-section {
-    margin-top: var(--spacing-medium);
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: black;
-}
-
-/*========== Dropdown ==========*/
-.dropdown-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    background-color: white;
-    box-sizing: border-box;
-    font-size: var(--font-medium);
-}
-
-/*========== Nhóm radio button ==========*/
-.radio-group {
-    height: calc(44px*var(--scale-factor));
-    display: flex;
-    background-color: white;
-    border-radius: calc(5px*var(--scale-factor));
-    border: 1px solid var(--border-color);
-}
-
-.radio-group input {
-    display: none;
-}
-
-.radio-group label {
-    flex: 1;
-    font-size: var(--font-small);
-    font-weight: 300;
-    text-align: center;
-    line-height: calc(44px*var(--scale-factor));
-    cursor: pointer;
-    margin: 0;
-}
-
-.radio-group input:checked+label {
-    background-color: #FCE4EC;
-}
-
-/*========== Nút tìm kiếm và reset ==========*/
-.search-button {
-    width: calc(290px*var(--scale-factor));
-    background-color: #3B5998;
-    color: white;
-    border: none;
-    border-radius: calc(50px*var(--scale-factor));
-    cursor: pointer;
-    padding: calc(10px*var(--scale-factor));
-    margin-top: var(--spacing-large);
-    font-size: var(--font-medium);
-}
-
-.reset-button {
-    width: 100%;
-    background: none;
-    border: none;
-    color: black;
-    cursor: pointer;
-    font-size: var(--font-small);
-    text-decoration: underline;
-    text-align: center;
-    margin-top: var(--spacing-medium);
-}
-
 /*========== product grid ==========*/
 .product {
-    width: fit-content;
+    width: 85%;
+    align-self: center;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(calc(260px*var(--scale-factor)), 1fr));
+    grid-template-columns: repeat(6, minmax(calc(260px*var(--scale-factor)), 1fr));
     grid-template-rows: repeat(auto-fill, calc(450px*var(--scale-factor)));
     justify-items: center;
     gap: calc(20px*var(--scale-factor));

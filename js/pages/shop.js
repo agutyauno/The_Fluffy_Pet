@@ -1,80 +1,6 @@
-// Filter Handler
-const filterHandler = {
-    init() {
-        this.setupSearchButton();
-        this.setupResetButton();
-    },
-
-    setupSearchButton() {
-        document.querySelector('.search-button').addEventListener('click', () => {
-            const filters = this.getFilterValues();
-            console.log('Bộ lọc:', filters);
-            // TODO: Implement filter logic
-            // this.applyFilters(filters);
-        });
-    },
-
-    setupResetButton() {
-        document.querySelector('.reset-button').addEventListener('click', () => {
-            this.resetFilters();
-            console.log('Đã reset bộ lọc');
-        });
-    },
-
-    getFilterValues() {
-        return {
-            breed: document.getElementById('cat-breed').value,
-            gender: document.querySelector('input[name="gender"]:checked').value,
-            price: document.getElementById('price-range').value,
-            vaccination: document.querySelector('input[name="vaccination"]:checked').value
-        };
-    },
-
-    resetFilters() {
-        // Reset breed select
-        const breedInput = document.getElementById('cat-breed');
-        if (breedInput) {
-            breedInput.value = '';
-            // Remove active class from options
-            const options = breedInput.closest('.custom-select').querySelector('.select-options');
-            options.classList.remove('active');
-        }
-
-        // Reset gender radio
-        const defaultGender = document.querySelector('input[name="gender"][value="none"]');
-        if (defaultGender) {
-            defaultGender.checked = true;
-        }
-
-        // Reset price range
-        const priceRange = document.getElementById('price-range');
-        if (priceRange) {
-            priceRange.value = '';
-            // Remove active class from options
-            const options = priceRange.closest('.custom-select').querySelector('.select-options');
-            options.classList.remove('active');
-        }
-
-        // Reset vaccination radio
-        const defaultVaccination = document.querySelector('input[name="vaccination"][value="none"]');
-        if (defaultVaccination) {
-            defaultVaccination.checked = true;
-        }
-
-        // Reset any hidden inputs or data attributes
-        document.querySelectorAll('.select-input').forEach(input => {
-            input.dataset.value = '';
-        });
-
-        // Refresh the product display
-        const productType = getProductTypeFromUrl();
-        shopProducts.fetchAndDisplayProducts(productType, 20);
-    }
-};
-
 // Pagination Handler
 const paginationHandler = {
-    itemsPerPage: 20,
+    itemsPerPage: 24,
     currentPage: 1,
 
     init() {
@@ -339,17 +265,16 @@ function updatePageTitle(type) {
 }
 
 // Initialize all handlers
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const productType = getProductTypeFromUrl();
     
-    filterHandler.init();
-    paginationHandler.init();
-    customSelectHandler.init();
+    // Fetch sản phẩm theo loại
+    await shopProducts.fetchAndDisplayProducts(productType);
     
     // Cập nhật tiêu đề
     updatePageTitle(productType);
     updatePageBanner(productType);
     
-    // Fetch sản phẩm theo loại
-    shopProducts.fetchAndDisplayProducts(productType, 20);
+    paginationHandler.init();
+    customSelectHandler.init();
 });
