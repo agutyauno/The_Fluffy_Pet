@@ -132,10 +132,11 @@ function displayPetDetails(pet) {
             </div>
             <div class="information_right">
                 <div class="name_pet">${pet.name}</div>
-                <div class="Buy">
-                    ${discountedPrice.toLocaleString()}đ
-                    ${pet.discount ? `<span class="original-price">${price.toLocaleString()}đ</span>` : ''}
-                </div>
+               <div class="product-price">
+                            <p class="product-current_price">${discountedPrice.toLocaleString()}<span class="product-price-unit">đ</span></p>
+                            <p class="product-old_price">${price.toLocaleString()}<span class="product-price-unit">đ</span></p>
+                            <p class="discount">${pet.discount}<span class="product-discount_unit">%</span></p>
+                        </div>
                 <div class="group">
                     <div class="info_section">
                         <div class="label_bold">Giới tính:</div>
