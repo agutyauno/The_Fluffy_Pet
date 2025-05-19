@@ -20,6 +20,41 @@ function fetchProduct(productId) {
     })
 }
 
+async function addToCart(product, variantNum = 0) {
+    try {
+        const cartItem = {
+            name: product.name,
+            imageUrl: product.imageUrl[0],
+            price: product.variants[variantNum].price,
+            discount: product.discount || 0 // Ensure discount is 0 if not provided
+        };
+
+        const response = await fetch('https://localhost:5201/api/Carts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(cartItem)
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Failed to add item to cart');
+        }
+
+        const result = await response.json();
+        console.log('Added to cart:', result);
+        
+        // Show success message
+        alert('Đã thêm sản phẩm vào giỏ hàng!');
+        
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        alert('Không thể thêm vào giỏ hàng. Vui lòng thử lại!');
+    }
+}
+
 function displayProductDetails(product, variantNum = 0) {
     const discountedPrice = product.variants[variantNum].price - (product.variants[variantNum].price * product.discount / 100);
     const productDetails = document.querySelector('.centered-fixed');
@@ -65,11 +100,6 @@ function displayProductDetails(product, variantNum = 0) {
             </div>
             <!-- Thanh thêm sản phẩm, và thêm giỏ hàng -->
             <div class="grop_products">
-                <div class="counter">
-                    <button class="subtract">-</button>
-                    <div class="count">1</div>
-                    <button class="add">+</button>
-                </div>
                 <button class="add_to_cart">THÊM VÀO GIỎ</button>
             </div>
             <!-- Thông tin sản phẩm -->
@@ -115,4 +145,11 @@ function displayProductDetails(product, variantNum = 0) {
             </div>
         </div>
     `;
+
+    const addToCartButton = document.querySelector('.add_to_cart');
+    if (addToCartButton) {
+        addToCartButton.addEventListener('click', () => {
+            addToCart(product, variantNum);
+        });
+    }
 }
